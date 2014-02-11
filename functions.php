@@ -339,7 +339,23 @@ function replace_reactor_styles() {
    wp_deregister_style('normalize');
    wp_dequeue_style('foundicons');
    wp_deregister_style('foundicons');
+   wp_dequeue_style('style');
+   wp_deregister_style('style');
+}	
+
+add_action('wp_enqueue_scripts', 'ea_enqueue_styles');
+add_action('wp_enqueue_scripts', 'ea_register_styles', 1);
+function ea_register_styles() {
+   wp_register_style('ea-style', get_stylesheet_directory_uri() . '/css/style.css', array(), false, 'all');
+   }
+   
+function ea_enqueue_styles() {
+	if ( !is_admin() ) { 
+		wp_enqueue_style('ea-style');
+		}
 }	 
+
+
 
 //change events+ messages
 add_filter('eab-rsvps-status_messages-map','ea_change_events_conf_messages');

@@ -1,22 +1,10 @@
-/*
-Theme Name: Earlyarts
-Theme URI: http://earlyarts.co.uk/
-Description: Earlyarts child theme of Reactor
-Author: Earlyarts
-Author URI: http://earlyarts.co.uk/
-Template: reactor
-Version: 1.1.0
-*/
 
-/*---THIS FILE HERE TO ACTIVATE CHILD THEME ONLY----------*/
+$ea_turqoise:#00879b;
+$ea_dk_blue: #00354b;
+$ea_lime:#9dca3a;
+$ea_orange:#fc671f;
+/*rem base = 16*/
 
-/*
-Footer turqoise:#00879b
-Dark blue: #00354b
-Lime:#9dca3a
-Orange CTA:#fc671f
-rem base = 16
-*/
 
 /* ----------MAIN TEMPLATING ---------*/
 
@@ -35,7 +23,7 @@ max-width:960px;
 /*100% bands, rather than page floating on background*/
 #page > #main, #page > #mobile-menu  {background:#fff;}
 #page > #header {background-color:#eee;}
-#page > #main > #breadcrumbs {background:#00879b}
+#page > #main > #breadcrumbs {background:$ea_turqoise}
 #content .row {background-color:#fff;}
 
 
@@ -50,7 +38,7 @@ line-height: 1.2;
 h1,h2 {
 font-size: 26px;
 font-size: 1.625rem;
-color:#00354b;
+color:$ea_dk_blue;
 letter-spacing:-1px;
 line-height: 1.1;
 }
@@ -58,7 +46,7 @@ line-height: 1.1;
 h3,h4 {
 font-size: 19px;
 font-size: 1.1875rem;
-color:#00879b;
+color:$ea_turqoise;
 }
 
 h5,h6{
@@ -69,16 +57,16 @@ text-transform:uppercase;
 
 h2,h4{
 font-weight:normal;
-color:#00879b;
+color:$ea_turqoise;
 }
 
 h4,h6{
-color:#9dca3a;
+color:$ea_lime;
 }
 
 
 
-a {color:#00879b;}
+a {color:$ea_turqoise;}
 a:hover{color:#333333;}
 
 /*
@@ -94,7 +82,7 @@ line-height:1.25rem;
 color:#555;
 }
 
-/*--------------HEADER-------*/
+/*------------HEADER-------*/
 
 .inner-header {
 margin-bottom: 0;
@@ -140,7 +128,7 @@ text-transform:uppercase;
 .top-bar-section ul li>a:not(.button):hover,
 .top-bar-section ul li.active>a {
 background:#B6B5B6;
-color:#00879b;
+color:$ea_turqoise;
 }
 
 
@@ -158,7 +146,7 @@ border-left: solid 1px #A0A0A0;
 /*-main menu using Foundation's top bar-*/
 
 .main-top-bar-wrapper {
-border-top: 5px solid #00879b;
+border-top: 5px solid $ea_turqoise;
 }
 
 .main-top-bar-wrapper .top-bar,
@@ -166,7 +154,7 @@ border-top: 5px solid #00879b;
 .main-top-bar-wrapper .top-bar-section li a:not(.button),
 .main-top-bar-wrapper .contain-to-grid
 {
-background: #00354b;
+background: $ea_dk_blue;
 }
 
 
@@ -272,7 +260,7 @@ font-style: italic;
 }
 
 .RHS-advert1{
-background: #00879b;
+background: $ea_turqoise;
 border-radius: 10px;
 border: 3px solid #fff;
 box-shadow: 0px 1px 1px rgba(0,0,0,0.6);
@@ -358,7 +346,7 @@ font-size: 14px;
 font-size: 0.875rem;
 font-weight: bold;
 text-transform: uppercase;
-color: #00879B;
+color: $ea_turqoise;
 }
 
 /*---------MAIN CONTENT AREA-------*/
@@ -465,7 +453,7 @@ height: 50px;
 }
 
 .orbit-caption .slide-excerpt{color:#fff}
-.orbit-caption .slide-title a {color:#9dca3a;}
+.orbit-caption .slide-title a {color:$ea_lime;}
 
 /*----------POST LISTINGS----------*/
 
@@ -473,7 +461,7 @@ h1.archive-title p
 {
 font-size: 26px;
 font-size: 1.625rem;
-color: #00354b;
+color: $ea_dk_blue;
 font-weight: bold;
 letter-spacing: -1px;
 line-height:1.1;
@@ -564,7 +552,7 @@ border: none;
 }
 
 #wpmudevevents-wrapper .wpmudevevents-content hr {
-border-top: 5px solid #00879b;
+border-top: 5px solid $ea_turqoise;
 margin-bottom: 5px;
 }
 
@@ -598,7 +586,7 @@ padding: 0px;
 }
 
 .basket-product-page {
-background: #fc671f url('/wp-content/themes/earlyarts/images/shopping-basket-small-on-orange.png') no-repeat 10px 5px;
+background: $ea_orange url('/wp-content/themes/earlyarts/images/shopping-basket-small-on-orange.png') no-repeat 10px 5px;
 border: 1px solid red;
 width: 240px;
 padding: 10px;
@@ -624,7 +612,7 @@ margin: 0px 10px;
 
 
 /*-----------FOOTER-------------------*/
-.site-info{padding-top:0px;background: #00879b}
+.site-info{padding-top:0px;background: $ea_turqoise}
 #colophon{color:#fff;}
 
 
@@ -634,7 +622,7 @@ text-transform: uppercase;
 color: #FFF;
 padding-top: 20px;
 padding-bottom: 20px;
-background: #00354b;
+background: $ea_dk_blue;
 }
 
 
@@ -660,7 +648,7 @@ margin-bottom:30px;
 
 #footer-info {
 color: #FFF;
-background-color: #00879b;
+background-color: $ea_turqoise;
 padding-top: 30px;
 padding-bottom: 15px;
 }
@@ -697,7 +685,7 @@ margin-bottom:7px
 /*footer-sidebar-*/
 
 .inner-footer {
-border-top: 5px solid #00879b;
+border-top: 5px solid $ea_turqoise;
 background: #eee;
 }
 
@@ -738,7 +726,7 @@ margin-left: 2px;
 /*-----------FRONT PAGE-------------------*/
 
 .frontpage-widget {
-border-top: 5px solid #00879b;
+border-top: 5px solid $ea_turqoise;
 background:#fff;
 padding:0px;
 box-shadow:0px 0px 0px;
