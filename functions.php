@@ -46,11 +46,11 @@ function reactor_child_theme_setup() {
 	// );
 	
 	/* Support for custom post types */
-	// remove_theme_support('reactor-post-types');
-	// add_theme_support(
-	// 	'reactor-post-types',
-	// 	array('slides', 'portfolio')
-	// );
+	remove_theme_support('reactor-post-types');
+	add_theme_support(
+		'reactor-post-types',
+	 	array('slides')
+	 );
 	
 	/* Support for page templates */
 	// remove_theme_support('reactor-page-templates');
@@ -380,7 +380,7 @@ if (is_page('cookie-clear'))
 }
 
 //The following two functions modify the product listing pages
-// mp_productlist adn mp_category
+// mp_productlist and mp_category
 
 function ea_mp_list_products($echo = true, $paginate = '', $page = '', $per_page = '', $order_by = '', $order = '', $category = '', $tag = '', $list_view = NULL) {
 		global $wp_query, $mp;
