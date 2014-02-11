@@ -1,4 +1,4 @@
-Earlyarts WordPress Theme
+empty-core
 ==========
 
-My simple repro for my Earlyarts work
+A starter child theme for Reactor

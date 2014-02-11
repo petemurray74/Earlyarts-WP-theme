@@ -46,11 +46,11 @@ function reactor_child_theme_setup() {
 	// );
 	
 	/* Support for custom post types */
-	remove_theme_support('reactor-post-types');
-	add_theme_support(
-	 	'reactor-post-types',
-	 	array('slides')
-	 );
+	// remove_theme_support('reactor-post-types');
+	// add_theme_support(
+	// 	'reactor-post-types',
+	// 	array('slides', 'portfolio')
+	// );
 	
 	/* Support for page templates */
 	// remove_theme_support('reactor-page-templates');
@@ -329,7 +329,17 @@ function ea_enqueue_scripts() {
 	if ( !is_admin() ) { 
 		wp_enqueue_script('ea-reactor-js');
 		}
-}		 
+}	
+
+// remove foundicons.css and remove normalize
+// I've added normalize to foundation.min.css
+add_action( 'wp_enqueue_scripts', 'replace_reactor_styles', 100 );
+function replace_reactor_styles() {
+   wp_dequeue_style('normalize');
+   wp_deregister_style('normalize');
+   wp_dequeue_style('foundicons');
+   wp_deregister_style('foundicons');
+}	 
 
 //change events+ messages
 add_filter('eab-rsvps-status_messages-map','ea_change_events_conf_messages');
@@ -369,8 +379,8 @@ if (is_page('cookie-clear'))
 	}
 }
 
-// The following two functions modify the product listing pages
-// mp_productlist and mp_category
+//The following two functions modify the product listing pages
+// mp_productlist adn mp_category
 
 function ea_mp_list_products($echo = true, $paginate = '', $page = '', $per_page = '', $order_by = '', $order = '', $category = '', $tag = '', $list_view = NULL) {
 		global $wp_query, $mp;

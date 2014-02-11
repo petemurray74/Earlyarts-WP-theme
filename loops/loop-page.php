@@ -38,7 +38,8 @@ if ( 'page' == get_option('show_on_front') && get_option('page_for_posts') && is
 
 	<?php while ( have_posts() ) : the_post(); ?>
        
-		<?php reactor_page_before(); ?>    
+		<?php reactor_page_before(); ?>
+                      
         <?php // get page content
         get_template_part('post-formats/format', 'page'); ?>
 
