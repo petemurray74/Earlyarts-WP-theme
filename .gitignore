@@ -217,3 +217,5 @@ pip-log.txt
 #PETE
 /images
 *.png
+*.jpg
+*.scssc
