@@ -341,7 +341,9 @@ function replace_reactor_styles() {
    wp_deregister_style('foundicons');
    wp_dequeue_style('style');
    wp_deregister_style('style');
-}	
+   wp_dequeue_style('eab-upcoming_calendar_widget-style');
+   wp_deregister_style('eab-upcoming_calendar_widget-style');
+   }	
 
 add_action('wp_enqueue_scripts', 'ea_enqueue_styles');
 add_action('wp_enqueue_scripts', 'ea_register_styles', 1);
