@@ -344,8 +344,11 @@ margin-bottom:10px;
 font-weight:bold;
 }
 
-.wpmudevevents-date {
+.widget_incsub_event_upcoming .wpmudevevents-date {
 float:none !important;
+line-height:1 !important;
+font-weight:normal !important;
+margin-top:2px !important;
 }
 
 /*---------LHS SUB MENU-------*/
