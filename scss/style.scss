@@ -327,6 +327,26 @@ margin: 0 0 4px 25px;
 background: url('/wp-content/themes/earlyarts/images/shopping-basket-xsmall-on-orange.png') no-repeat;
 }
 
+.widget_incsub_event_upcoming ul
+{
+margin-left:0;
+}
+
+.widget_incsub_event_upcoming li
+{
+list-style-type:none;
+clear:left;
+margin-bottom:10px;
+}
+
+.widget_incsub_event_upcoming a
+{
+font-weight:bold;
+}
+
+.wpmudevevents-date {
+float:none !important;
+}
 
 /*---------LHS SUB MENU-------*/
 
