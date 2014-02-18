@@ -31,7 +31,7 @@ float: left;
 	line-height: 40px;
 	background: url('modern-images/money.png') no-repeat 0 2px;
 	margin-right: 10px;
-	padding: 0px 0px 0px 20px;
+	padding: 0;
 }
 
 .product {
@@ -572,11 +572,11 @@ font-size:1px;
 .mp_grid .mp_one_tile, 
 .mp_grid .mp_one_product { display: inline; }
 
-.mp_grid .mp_product_detail { vertical-align: top; margin-bottom: 60px; margin-top: 30px; }
+.mp_grid .mp_product_detail { vertical-align: top; margin-bottom: 35px; margin-top: 30px; }
 .mp_grid .mp_price_buy { vertical-align: bottom; }
 
 .mp_grid .mp_buy_form { float:none; text-align: center; }
-.mp_grid .mp_product_price { display: inline-block; background: none; padding: 0; margin: 0 0 0 16px; }
+.mp_grid .mp_product_price { display: inline-block; background: none; padding: 0; margin: 0 0 0 -3px; }
 .mp_grid .mp_product_price:before { 
 	content: ' ';
 	width: 16px;
@@ -686,10 +686,6 @@ margin-right: 8px;
 font-size: 16px;
 font-size: 1rem;
 margin-top:10px;
-}
-
-.mp_grid .mp_product_detail {
-margin-bottom: 35px;
 }
 
 .site-content .product {

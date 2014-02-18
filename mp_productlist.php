@@ -35,7 +35,9 @@
 									<div class="entry-content">
 										<?php 
 										// show only products tagged with as 'teaching-guides'
-										ea_mp_list_products(true,'','','','','','','teaching-guides'); ?>
+										//ea_mp_list_products(true,'','','','','','','teaching-guides'); 
+										ea_mp_list_products(true,'','','','','','','teaching-guides'); 
+										?>
 									</div><!-- .entry-content -->
 									
 									<footer class="entry-footer">

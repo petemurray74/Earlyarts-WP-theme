@@ -582,55 +582,6 @@ float: none !important;
 }
 
 
-/*-----------PRODUCTS-------------------*/
-
-.mp_product_image_single,.mp_product_image_widget{
-margin-right: 8px;
-}
-
-.entry-content h3.mp_product_name
-{
-font-size: 16px;
-font-size: 1rem;
-margin-top:10px;
-}
-
-.mp_grid .mp_product_detail {
-margin-bottom: 35px;
-}
-
-.site-content .product {
-border-top: 0px;
-margin-top: 0px;
-padding: 0px;
-}
-
-.basket-product-page {
-background: $ea_orange url('/wp-content/themes/earlyarts/images/shopping-basket-small-on-orange.png') no-repeat 10px 5px;
-border: 1px solid red;
-width: 240px;
-padding: 10px;
-color: #fff;
-border-radius: 4px;
-}
-
-.basket-product-page a {
-position: relative;
-left: 40px;
-color: #fff;
-}
-
-.basket-product-page:hover {background-color: rgb(255, 61, 0)}
-
-.mp_cart_payment_methods label {
-margin: 0px 20px 10px 10px;
-}
-
-.mp_cart_payment_methods label img {
-margin: 0px 10px;
-}
-
-
 /*-----------FOOTER-------------------*/
 .site-info{padding-top:0px;background: $ea_turqoise}
 #colophon{color:#fff;}

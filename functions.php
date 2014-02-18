@@ -543,6 +543,11 @@ function ea_mp_products_html_grid($post_array = array()) {
                     ' . $mp_product_list_content . '
                   </div>
 
+				  <div class="mp_price_buy"' . ($inline_style ? ' style="width: ' . $width . 'px; margin-left:-' . $width . 'px;"' : '') . '>
+                    ' . mp_product_price(false, $post->ID,'From: ') . '
+                    ' . apply_filters('mp_product_list_meta', '', $post->ID) . '
+                  </div>
+				  
                 </div>
               </div>';
     }
@@ -551,3 +556,4 @@ function ea_mp_products_html_grid($post_array = array()) {
 
     return $html;
 }
+
