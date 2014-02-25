@@ -2,4 +2,12 @@ $ea_turqoise:#00879b;
 $ea_dk_blue: #00354b;
 $ea_lime:#9dca3a;
 $ea_orange:#fc671f;
+$ea_widget_bk:rgba(0,135,155,0.05);
+
+
 /*rem base = 16*/
+/*mixin input is pixels)*/
+@mixin font-size($sizeValue: 12) {
+  font-size: ($sizeValue) + px;
+  font-size: ($sizeValue/16) + rem;
+}
