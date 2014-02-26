@@ -577,6 +577,8 @@ font-size:1px;
 
 .mp_grid .mp_buy_form { float:none; text-align: center; }
 .mp_grid .mp_product_price { display: inline-block; background: none; padding: 0; margin: 0 0 0 -3px; }
+
+/*
 .mp_grid .mp_product_price:before { 
 	content: ' ';
 	width: 16px;
@@ -587,6 +589,8 @@ font-size:1px;
 	left: -20px;
 	display: block;
 }
+*/
+
 .mp_grid .mp_old_price { opacity: 0.5; }
 
 /* End GRID view */
