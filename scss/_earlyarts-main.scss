@@ -190,8 +190,7 @@ text-indent: -80px;
 /*-----------WIDGETS----------------*/
 
 h4.widget-title {
-font-size: 14px;
-font-size: 0.875rem;
+@include font-size(14);
 font-weight: bold;
 text-transform: uppercase;
 color: #666;
@@ -208,15 +207,35 @@ border-radius: 1px;
 	margin-left:0;
 	}
 	li {
-	@include line-height(17);
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	list-style-type:none;
+	}
+	a{
+	font-weight:bold;
+	}
+	li,p{
+	@include font-size(12);
+	@include line-height(17);
 	}
 }
 
-.nav-widget.widget {
+.nav-widget {
 background: #fff;
 box-shadow: 0px 0px;
+text-transform:uppercase;
+	li{
+	@include font-size(14);
+	padding:10px 0px;
+	border-bottom:1px dotted #ccc;
+	margin-bottom:0;
+	}
+	a{
+	font-weight:bold;
+	}
+	.widget-title{
+	display:none;
+	}
+	
 }
 
 .lcp_post_title_no_space {
@@ -328,29 +347,31 @@ margin: 0 0 4px 25px;
 background: url('/wp-content/themes/earlyarts/images/shopping-basket-xsmall-on-orange.png') no-repeat;
 }
 
-.widget_incsub_event_upcoming ul
-{
-margin-left:0;
-}
+/*-------------EVENTS WIDGETS------------------*/
+.widget_incsub_event_upcoming {
+	ul
+	{
+	margin-left:0;
+	}
+	 li
+	{
+	list-style-type:none;
+	clear:left;
+	margin-bottom:10px;
+	}
+	.wpmudevevents-date {
+	float:none !important;
+	line-height:1 !important;
+	font-weight:normal !important;
+	margin-top:2px !important;
+	}
+	.wpmudevevents-date {
+	font-size: 12px;
+	color: #666;
+	}
 
-.widget_incsub_event_upcoming li
-{
-list-style-type:none;
-clear:left;
-margin-bottom:10px;
-}
+}	
 
-.widget_incsub_event_upcoming a
-{
-font-weight:bold;
-}
-
-.widget_incsub_event_upcoming .wpmudevevents-date {
-float:none !important;
-line-height:1 !important;
-font-weight:normal !important;
-margin-top:2px !important;
-}
 
 /*---------LHS SUB MENU-------*/
 
