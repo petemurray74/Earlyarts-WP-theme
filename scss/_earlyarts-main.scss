@@ -405,7 +405,6 @@ font-size: 115%;
 }
 
 .entry-body {
-border-bottom: 1px dotted #ddd;
 font-size: 14px;
 }
 
@@ -719,3 +718,14 @@ line-height:1.6;
 .twitter-timestamp {
 margin-left: 2px;
 }
+
+/*------------FORMS------------*/
+
+/*bit more height for selects */
+select.um_input {
+height: 27px;
+height: 1.7rem;
+}
+
+
+
