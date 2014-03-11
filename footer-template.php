@@ -1,10 +1,10 @@
 
 <div id="footer-social">
 	<div class="row">
-				<div class="large-3 small-12 columns"><a href="http://vimeo.com/earlyarts"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon_vimeo.png" width="36" height="36" /><span>Watch our videos</span></a></div>
-				<div class="large-3 small-12 columns"><a href="http://www.facebook.com/earlyartsuk"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon_facebook.png" width="36" height="36" /><span>Join us on facebook</span></a></div>
-				<div class="large-3 small-12 columns"><a href="https://twitter.com/#!/earlyartsuk"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon_twitter.png" width="36" height="36" /><span>Follow us on twitter</span></a></div>
-				<div class="large-3 small-12 columns"><a href="http://www.flickr.com/photos/earlyartsuk/collections/"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icon_flickr.png" width="36" height="36" /><span>View our photos</span></a></div>	
+				<div class="large-3 small-12 columns"><a href="http://vimeo.com/earlyarts"><div class="social-sprite vimeo"></div><span>Watch our videos</span></a></div>
+				<div class="large-3 small-12 columns"><a href="http://www.facebook.com/earlyartsuk"><div class="social-sprite facebook"></div><span>Join us on facebook</span></a></div>
+				<div class="large-3 small-12 columns"><a href="https://twitter.com/#!/earlyartsuk"><div class="social-sprite twitter"></div><span>Follow us on twitter</span></a></div>
+				<div class="large-3 small-12 columns"><a href="http://www.flickr.com/photos/earlyartsuk/collections/"><div class="social-sprite flickr"></div><span>View our photos</span></a></div>	
 	</div>
 </div>	
 <div id="footer-info">

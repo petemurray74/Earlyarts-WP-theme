@@ -34,9 +34,13 @@
                             endif;
                         ?></h1>
                     </header><!-- .archive-header -->
-                <?php endif; // end have_posts() check ?> 
+                <?php endif; // end have_posts() check 
                 
-				<?php // get the loop
+				// show only news (18) and blogs (19) on archive pages
+				global $query_string;
+				query_posts( $query_string . '&cat=18,19' );
+				
+				// get the loop
 				get_template_part('loops/loop', 'index'); ?>
                 
                 <?php reactor_inner_content_after(); ?>
