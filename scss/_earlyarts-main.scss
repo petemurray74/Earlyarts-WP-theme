@@ -615,8 +615,6 @@ float: none !important;
 .site-info{padding-top:0px;background: $ea_turqoise}
 #colophon{color:#fff;}
 
-
-
 #footer-social {
 text-transform: uppercase;
 color: #FFF;
@@ -625,15 +623,10 @@ padding-bottom: 20px;
 background: $ea_dk_blue;
 }
 
-
 #footer-social a {
 color: #fff;
 font-size:11px;
 font-size:0.6875rem;
-}
-
-#footer-social img {
-margin-right:10px;
 }
 
 #footer-social a:hover {
@@ -642,6 +635,23 @@ text-decoration: underline;
 
 #footer-social>div>div {
 margin-bottom:30px;
+}
+
+.social-sprite{
+height: 36px;
+background: url(/wp-content/themes/earlyarts/images/social-icons-sprites.png);
+display: inline-block;
+width: 36px;
+vertical-align: middle;
+}
+
+.vimeo {background-position: 36px 36px;}
+.facebook {background-position: 72px 36px;}
+.twitter {background-position: 144px 36px;}
+.flickr {background-position: 108px 36px;}
+
+#footer-social span{
+padding-left:10px;
 }
 
 #footer-info .row {padding:10px;}
