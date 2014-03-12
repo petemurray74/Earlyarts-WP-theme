@@ -65,13 +65,12 @@ function reactor_do_title_logo() { ?>
 	<div class="inner-header">
 		<div class="row">
 			<div class="column">
-				<?php if ( reactor_option('logo_image') ) : ?>
                 <div class="site-logo">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php echo reactor_option('logo_image') ?>" alt="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?> logo">
+				<?php // call to Reactor options removed, both to remove PHP work and allow us to use a external URL for the logo ?>
+					<a href="/" title="Earlyarts" rel="home">
+						<img src="http://farm8.staticflickr.com/7296/13102388443_a1f99f60b0_o.png" width="494" height="137" alt="Earlyarts logo">
 					</a>
 				</div><!-- .site-logo -->
-				<?php endif; // end if logo ?>
 				<div class="title-area">
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 					<p class="site-description"><?php bloginfo('description'); ?></p>
