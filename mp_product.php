@@ -42,7 +42,7 @@
 								mp_product_image($thisProdId);
 								mp_product_description($thisProdId);
 								mp_product_price($thisProdId);
-								mp_buy_button(true,'list',$thisProdId);
+								mp_buy_button(true,'single',$thisProdId);
 								?>
 							</div><!-- .entry-content -->
 							
