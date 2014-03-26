@@ -28,7 +28,7 @@
 								<div class="entry-body">
 								<header class="entry-header">
 								<h1 class="entry-title">All Teaching Packs</h1>
-								<h3>Our creative teaching packs are based on sound pedagogical contexts highlighting how the activities help your children's learning.</h3>
+								<h3>Our creative EYFS teaching packs are based on sound pedagogical contexts highlighting  activities that help your children's learning.</h3>
 								<p><strong>More about <a href="/store/creative-teaching-makes-sense/">the packs and what makes them special</a></strong></p>
 								</header>
 								
