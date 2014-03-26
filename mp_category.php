@@ -30,7 +30,7 @@
 										<h1 class="entry-title"><?php single_cat_title(); ?></h1>
 									</header><!-- .entry-header -->
 									<?php // reactor_page_header(); ?>
-											
+									<?php echo category_description(); ?>
 									<div class="entry-content">
 										<?php ea_mp_list_products(); ?>
 									</div><!-- .entry-content -->
