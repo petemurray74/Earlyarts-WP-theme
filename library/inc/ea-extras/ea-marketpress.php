@@ -136,3 +136,22 @@ function ea_mp_products_html_grid($post_array = array()) {
 
     return $html;
 }
+
+//
+// Function to apply discounts to members
+// ref:http://premium.wpmudev.org/forums/topic/how-do-i-offer-separating-pricing-for-premium-members-using-marketpress
+
+function mp_membership_price_discount( $price ){
+	// check for existence of Membership plugin
+	if ( class_exists( 'M_Membership' ) ) {
+		// check if user is logged in
+		if ( is_user_logged_in() ){	
+		// take 10% discount for users on access level with id=5
+			if ( current_user_on_level(5) ) {
+				return $price * 0.9;
+			}
+		}
+	}
+	return $price;
+}
+add_filter( 'mp_product_price', 'mp_membership_price_discount' );
