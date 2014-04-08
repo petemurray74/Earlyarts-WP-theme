@@ -43,7 +43,7 @@
 								mp_product_description($thisProdId);
 								mp_product_price($thisProdId);
 								mp_buy_button(true,'single',$thisProdId);
-								if (current_user_on_level(5)) {echo '<div class="ea_mp_discount_price">Your 10% subscriber discount will be applied in the checkout</div>';}
+								if (current_user_on_level(5)) {echo '&nbsp;<div class="success radius label ea_mp_discount_price">Your 10% member discount will be applied in the checkout</div>';}
 								?>
 							</div><!-- .entry-content -->
 							
