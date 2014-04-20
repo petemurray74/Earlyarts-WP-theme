@@ -23,9 +23,8 @@
             </div><!-- .entry-summary -->
             <?php elseif ( is_single() ) : ?>
 			<div class="entry-content">
-				<?php 
-				the_content();
-                wp_link_pages( array('before' => '<div class="page-links">' . __('Pages:', 'reactor'), 'after' => '</div>') ); ?>
+				<?php the_content(); ?>
+                <?php wp_link_pages( array('before' => '<div class="page-links">' . __('Pages:', 'reactor'), 'after' => '</div>') ); ?>
             </div><!-- .entry-content --> 
             <?php else : ?>
             <div class="entry-content">
@@ -37,8 +36,7 @@
             	<?php 
 				//no meta on post 160 (thanks for subscribing)
 				if (!is_single(160)) { 
-				reactor_post_footer(); 
-				} ?>
+				reactor_post_footer(); } ?>
             </footer><!-- .entry-footer -->
         </div><!-- .entry-body -->
 	</article><!-- #post -->
