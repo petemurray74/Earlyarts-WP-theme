@@ -279,7 +279,7 @@ function earlyarts_hero_image () {
 <div class="hero">
 	<div class="row">
 		<div class="<?php reactor_columns( 12 ); ?> header-hero">
-			<img src="http://farm8.staticflickr.com/7321/13102176545_72be4d24ca_o.jpg" width="988" height="190">
+			<img src="https://farm6.staticflickr.com/5543/14061349481_01a492a6e4_o.jpg" width="988" height="190">
 		</div>	
 	</div>
 </div>
