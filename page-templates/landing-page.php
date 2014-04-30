@@ -15,8 +15,6 @@
     	<?php //reactor_content_before(); ?>
    
         <div id="content" role="main">
-        	<div class="row">        
-                <div class="<?php reactor_columns(12); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
                 
@@ -33,9 +31,7 @@
                     
                 <?php reactor_inner_content_after(); ?>
                 
-                </div><!-- .columns -->
 
-            </div><!-- .row -->
         </div><!-- #content -->
         
         <?php reactor_content_after(); ?>

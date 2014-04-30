@@ -15,7 +15,7 @@
 		// get the static footer 
 		//get_template_part('footer', 'template'); 
         
-		reactor_footer_inside(); ?>
+		//reactor_footer_inside(); ?>
   
         </footer><!-- #footer -->
         
