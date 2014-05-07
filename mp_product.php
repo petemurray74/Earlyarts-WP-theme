@@ -59,7 +59,7 @@
                 
                 </div><!-- .columns -->
                 
-                <?php get_sidebar(); ?>
+                <?php get_sidebar('store'); ?>
                 
             </div><!-- .row -->
         </div><!-- #content -->
