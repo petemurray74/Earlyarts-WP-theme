@@ -27,6 +27,10 @@ padding: 0 1.2em 1.25em;
 }
 }
 
+div [itemprop=price-description] p {
+margin-bottom: 0;
+}
+
 /*-----end earlyarts queries-------*/
 
 .clearfix:after {
