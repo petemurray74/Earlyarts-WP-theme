@@ -304,6 +304,16 @@ text-decoration: none;
 border-bottom: 1px dotted white;
 }
 
+.join-widget{
+	li {
+	list-style-type: disc;
+	margin-bottom: 0.1em;
+	}
+	ul {
+	margin-left:14px;
+	}
+}
+
 
 /*-product listings in RHS-*/
 .widget #mp_product_list li {
