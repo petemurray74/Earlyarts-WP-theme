@@ -20,9 +20,9 @@ margin-bottom:0px;
 	}
 	a
 	{
-	font-weight: bold;
-	@include font-size(14);
-	@include line-height(15);
+	font-weight: normal;
+	@include font-size(12);
+	@include line-height(13);
 	}
 	p
 	{
@@ -92,3 +92,14 @@ padding:0;
 		}
 	}
 
+	/* FIXES FOR <EM> weirdness */
+	
+	.wysija-paragraph label,
+#sidebar-frontpage p em,
+.widget .twitter-item,
+#footer-social,
+#footer-info p ,
+.frontpage-widget em
+ {
+ font-style:normal
+ }
