@@ -186,7 +186,7 @@ function earlyarts_user_meta_msg ($msgs) {
 
 $msgs['profile_updated']           = __( 'Information submitted, thank you.', $userMeta->name );
 
-$msgs['registration_completed']  = __( 'You\'ve successfully registered with Earlyarts.<br><br>If you\'d like to buy a subscription, please continue to <a href="/choose-a-subscription">choose a subscription</a>', $userMeta->name );    
+$msgs['registration_completed']  = __( 'You\'ve successfully registered with Earlyarts.<br><br>If you\'d like to join, please continue to <a href="/choose-a-subscription">membership options</a>', $userMeta->name );    
 
 return $msgs;
 }
