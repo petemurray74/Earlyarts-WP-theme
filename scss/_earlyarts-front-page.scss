@@ -50,21 +50,22 @@ box-shadow:none;
 	.widget{
 	background:none;
 	}
+	h2 {
+	font-weight: normal;
+	@include font-size(19);
+	color: #777;
+	line-height: 1.1em;
+	letter-spacing: 0px;
+	margin-top:-1px;
+	}
+	h1 {
+	margin-bottom:0;
+	}
 }
 
 .front-page h4.widget-title {
 color: #333;
 }
-
-
-.front-page h2 {
-font-weight: bold;
-@include font-size(20);
-color: #444;
-line-height: 1.1em;
-letter-spacing: -1px;
-}
-
 
 .front-blog-widget {
 	p {
