@@ -92,15 +92,3 @@ padding:0;
 		@include font-size(11);
 		}
 	}
-
-	/* FIXES FOR <EM> weirdness */
-	
-	.wysija-paragraph label,
-#sidebar-frontpage p em,
-.widget .twitter-item,
-#footer-social,
-#footer-info p ,
-.frontpage-widget em
- {
- font-style:normal
- }
