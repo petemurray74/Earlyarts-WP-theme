@@ -1,18 +1,14 @@
-.page-template-page-templateslanding-page-php #page .site-content 
-{
-padding-bottom:0
-}
 
-.page-template-page-templateslanding-page-php #main {
-border:0 !important
-}
-
-#content .row {
-background-color:inherit;
-}
-
-.page-template-page-templateslanding-page-php {
-
+.landing-page1 {
+	#page .site-content {
+	padding-bottom:0 !important
+	}
+	#main {
+	border:0 !important
+	}
+	.row {
+	background-color:inherit !important;
+	}
 	h1 {
 	font-size: 40px;color: #E9E9E9;text-shadow: 0px 0px 4px rgba(21, 81, 90, 0.4);margin-bottom:0;letter-spacing:-2px;
 	}
@@ -23,53 +19,47 @@ background-color:inherit;
 	font-size:24px;font-weight:normal;margin-bottom:0;color:#eee;
 	}
 	h4 {
-	font-size:16px;color:#666;line-height: 1.6;
+	font-size:16px;line-height: 1.6;
+	}
+	.light{
+	background-color:#eee;border-bottom: 7px solid #636363;
+		li {
+		color:#666;
+		@include font-size(16);
+		}
+		h4 {
+		color:#666;
+		}
+	}
+	.dark{
+	background-color:#767676;border-bottom: 7px solid #8A8A8A;
+		h2{
+		color:#9dca3a;
+		}
+		h4{
+		color:#eee;
+		}
+	}
+	.row-wrap{
+	padding-bottom:1.5em;padding-top:1.5em;
+	}
+	.white{
+	background-color:#fff !important;
+	}
+	.primary-band{
+	background-color: #00879B !important;border-bottom: 7px solid #5FAFBB !important;
+	}
+	.landing-page-footer {
+	background-color: #00879B !important;border-top: 7px solid #5FAFBB !important;border-bottom:0 !important;
+		a{
+		color:#fff;
+		}
+	}
+	.pack-photo-bk{
+	background: url('/wp-content/themes/earlyarts/images/landing-page/pack-landing-page.jpg') no-repeat left top;
+		.row{
+		background: rgba(255, 255, 255, 0.8) !important; margin-top: 5em; padding-top: 1em; margin-bottom: 5em; padding-bottom: 1em;
+		}
 	}
 }
 
-.page-template-page-templateslanding-page-php .entry-content .light{
-background-color:#eee;border-bottom: 7px solid #636363;
-	li {
-	color:#666;
-	@include font-size(16);
-	}
-}
-
-.page-template-page-templateslanding-page-php .entry-content .dark{
-background-color:#767676;border-bottom: 7px solid #8A8A8A;
-	h2{
-	color:#ACD7DD;color:#9dca3a;
-	}
-	h4{
-	color:#eee;
-	}
-}
-
-
-.page-template-page-templateslanding-page-php .entry-content .row-wrap{
-padding-bottom:1.5em;padding-top:1.5em;
-}
-
-.page-template-page-templateslanding-page-php .entry-content .white{
-background-color:#fff !important;
-}
-
-.page-template-page-templateslanding-page-php .entry-content .primary-band{
-background-color: #00879B !important;border-bottom: 7px solid #5FAFBB !important;
-}
-
-.page-template-page-templateslanding-page-php .entry-content .landing-page-footer a{
-color:#fff;
-}
-
-.page-template-page-templateslanding-page-php .entry-content .landing-page-footer {
-background-color: #00879B !important;border-top: 7px solid #5FAFBB !important;border-bottom:0 !important;
-}
-
-.page-template-page-templateslanding-page-php .pack-photo-bk{
-background: url('/wp-content/themes/earlyarts/images/landing-page/pack-landing-page.jpg') no-repeat left top;
-}
-
-.page-template-page-templateslanding-page-php .pack-photo-bk .row{
-background: rgba(255, 255, 255, 0.8) !important; margin-top: 5em; padding-top: 1em; margin-bottom: 5em; padding-bottom: 1em;
-}

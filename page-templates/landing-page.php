@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Landing Page
+ * Template Name: Landing Page 1
  *
  * @package Reactor
  * @subpackge Page-Templates
@@ -10,7 +10,7 @@
 
 <?php get_header('landing-page'); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="landing-page1" class="site-content">
     
     	<?php //reactor_content_before(); ?>
    
