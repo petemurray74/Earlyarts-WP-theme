@@ -30,6 +30,16 @@
 		h4 {
 		color:#666;
 		}
+		.number {
+		color: #00879b;
+		}
+		h1 {
+		@include font-size(50);
+		color: #00879b; 
+		margin-bottom:0;
+		letter-spacing:-2px;
+		text-shadow:0 0 0;
+		}
 	}
 	.dark{
 	background-color:#767676;border-bottom: 7px solid #8A8A8A;
@@ -38,6 +48,9 @@
 		}
 		h4{
 		color:#eee;
+		}
+		.number {
+		color:#9dca3a;
 		}
 	}
 	.row-wrap{
@@ -60,6 +73,14 @@
 		.row{
 		background: rgba(255, 255, 255, 0.8) !important; margin-top: 5em; padding-top: 1em; margin-bottom: 5em; padding-bottom: 1em;
 		}
+	}
+	.number {
+	font-size: 125px;
+	float: left;
+	line-height: 0.75;
+	font-family: 'Arial Black', Gadget, sans-serif;
+	font-weight: bold;
+	padding-right: 10px;
 	}
 }
 
