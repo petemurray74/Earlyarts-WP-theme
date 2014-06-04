@@ -53,14 +53,16 @@
 		color:#9dca3a;
 		}
 	}
-	.row-wrap{
-	padding-bottom:1.5em;padding-top:1.5em;
-	}
-	.white{
-	background-color:#fff !important;
-	}
 	.primary-band{
-	background-color: #00879B !important;border-bottom: 7px solid #5FAFBB !important;
+	background-color: #00879B !important;
+	border-bottom: 7px solid #5FAFBB !important;
+		.number {
+		color: #00879b;
+		}
+		h4{
+		color:#eee;
+		}
+		
 	}
 	.landing-page-footer {
 	background-color: #00879B !important;border-top: 7px solid #5FAFBB !important;border-bottom:0 !important;
@@ -81,6 +83,12 @@
 	font-family: 'Arial Black', Gadget, sans-serif;
 	font-weight: bold;
 	padding-right: 10px;
+	}
+	.row-wrap{
+	padding-bottom:1.5em;padding-top:1.5em;
+	}
+	.white{
+	background-color:#fff !important;
 	}
 }
 
