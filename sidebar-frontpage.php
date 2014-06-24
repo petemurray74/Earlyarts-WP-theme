@@ -35,7 +35,7 @@
     <?php // if front page has two sidebars and second sidear is active
     if ( is_active_sidebar('sidebar-frontpage-2') && ( '3c-l' == $layout || '3c-r' == $layout || '3c-c' == $layout ) ) : ?>
     
-    <?php reactor_sidebar_before(); ?>
+    <?php // reactor_sidebar_before(); ?>
     
         <div id="sidebar-frontpage-2" class="sidebar <?php reactor_columns( '', true, true, 2 ); ?>" role="complementary">
             <?php dynamic_sidebar('sidebar-frontpage-2'); ?>

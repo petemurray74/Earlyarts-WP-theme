@@ -129,7 +129,7 @@ function ea_mp_products_html_grid($post_array = array()) {
 				</div>
 				
 				<div class="ea_mp_buy">
-					<span><a class="small radius button" href="'.get_permalink($post->ID) . '">Details and formats</a></span>
+					<span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span>
 				</div>					
               </li>';
     }
