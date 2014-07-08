@@ -1,0 +1,53 @@
+/* Social Sharing by Danny */
+
+
+.dvk-social-sharing {
+	line-height: 32px; 
+    padding: 15px;
+    background-color: rgba(0,135,155,0.05);
+}
+
+.dvk-social-sharing > a{ 
+	margin-left:12px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.dvk-social-sharing > span:first-child {
+	font-weight: bold;
+}
+
+span[class^="ss-icon-"] {
+	width:32px;
+	height:32px;
+	display: inline-block;
+	background-image: url("../images/social_share.png");
+	background-repeat: no-repeat;
+	margin-right:6px; 
+	vertical-align: middle;
+}
+
+.ss-icon-twitter {
+	background-position:0px 0px;
+}
+
+a:hover > .ss-icon-twitter {
+	background-position:0px -32px;
+}
+
+.ss-icon-facebook {
+	background-position:-32px 0px;
+}
+
+a:hover > .ss-icon-facebook {
+	background-position:-32px -32px;
+}
+
+.ss-icon-googleplus {
+	background-position:-64px 0px;
+}
+
+a:hover > .ss-icon-googleplus {
+	background-position:-64px -32px;
+}
+
