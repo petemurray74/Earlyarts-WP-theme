@@ -369,7 +369,7 @@ add_filter('eab-rsvps-status_messages-map','ea_change_events_conf_messages');
 function ea_change_events_conf_messages()
 {
 $map = array(
-			Eab_EventModel::BOOKING_YES => __("Excellent! We've got your place reserved. Please make your payment below to confirm your place, unless you're a subscribed member", Eab_EventsHub::TEXT_DOMAIN),
+			Eab_EventModel::BOOKING_YES => __("Excellent! We've got your place reserved. If there's a payment due you'll see a box below. Once you've made the payment, your place is confirmed", Eab_EventsHub::TEXT_DOMAIN),
 			Eab_EventModel::BOOKING_MAYBE => __("Thanks for letting us know. Hopefully you'll be able to make it!", Eab_EventsHub::TEXT_DOMAIN),
 			Eab_EventModel::BOOKING_NO => __("That's too bad you won't be able to make it", Eab_EventsHub::TEXT_DOMAIN),
 		);
