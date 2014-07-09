@@ -332,17 +332,21 @@ function ea_enqueue_scripts() {
 }	
 
 // remove foundicons.css and remove normalize
-// I've added normalize to foundation.min.css
+// I've added normalize to main stylesheet via SASS
 add_action( 'wp_enqueue_scripts', 'replace_reactor_styles', 100 );
 function replace_reactor_styles() {
-   wp_dequeue_style('normalize');
-   wp_deregister_style('normalize');
-   wp_dequeue_style('foundicons');
-   wp_deregister_style('foundicons');
-   wp_dequeue_style('style');
-   wp_deregister_style('style');
-   wp_dequeue_style('eab-upcoming_calendar_widget-style');
-   wp_deregister_style('eab-upcoming_calendar_widget-style');
+    wp_dequeue_style('normalize');
+    wp_deregister_style('normalize');
+    wp_dequeue_style('foundicons');
+    wp_deregister_style('foundicons');
+    wp_dequeue_style('foundation');
+    wp_deregister_style('foundation');
+    wp_dequeue_style('reactor');
+    wp_deregister_style('reactor'); 
+    wp_dequeue_style('style');
+    wp_deregister_style('style');
+    wp_dequeue_style('eab-upcoming_calendar_widget-style');
+    wp_deregister_style('eab-upcoming_calendar_widget-style');
    }	
 
 add_action('wp_enqueue_scripts', 'ea_enqueue_styles');
