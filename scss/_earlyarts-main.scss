@@ -664,10 +664,11 @@ width: 36px;
 vertical-align: middle;
 }
 
-.vimeo {background-position: 36px 36px;}
-.facebook {background-position: 72px 36px;}
-.twitter {background-position: 144px 36px;}
-.flickr {background-position: 108px 36px;}
+.vimeo {background-position: -108px 36px;}
+.facebook {background-position: -72px 36px;}
+.twitter {background-position: 0px 36px;}
+.flickr {background-position: -108px 36px;}
+.linkedin {background-position: -144px 36px;}
 
 #footer-social span{
 padding-left:10px;
