@@ -7,8 +7,8 @@
  * @since 1.0.0
  */
 ?>
-
-<?php get_header('landing-page'); ?>
+<?php get_template_part('page-templates/meta-controls');?>
+<?php get_header(); ?>
 
 	<div id="primary" class="landing-page1" class="site-content">
     
