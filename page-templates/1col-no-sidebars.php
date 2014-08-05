@@ -8,10 +8,13 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_template_part('page-templates/meta-controls');?>
+<?php get_header(); ?> 
 
-	<div id="primary" class="landing-page1" class="site-content">
-    <?php remove_action('reactor_content_before', 'earlyarts_hero_image', 5); ?>
+	<div id="primary" class="site-content">
+        <div class="row">
+            <div class="large-12 small-12 columns">
+               
     	<?php reactor_content_before(); ?>
     
         <div id="content" role="main">
@@ -23,7 +26,10 @@
                     
                     <?php reactor_post_before(); ?>
 					<article <?php post_class(); ?>>
-						<div class="entry-body">
+                        <div class="entry-body">
+						    <header class="entry-header"> 
+								<h1 class="entry-title"><?php the_title();?></h1>
+							</header><!-- .entry-header -->
 							<div class="entry-content">   
 					<?php the_content(); ?>
 							</div>
@@ -38,7 +44,8 @@
         </div><!-- #content -->
         
         <?php reactor_content_after(); ?>
-        
+                </div><!-- .columns -->
+        </div><!-- .row -->
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

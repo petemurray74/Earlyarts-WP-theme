@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: Events archive page
+ * Template Name: EA Events archive page
  *
- * @package Reactor
+ * @package Earlyarts
  * @subpackge Page-Templates
- * @link http://www.catswhocode.com/blog/how-to-create-a-built-in-contact-form-for-your-wordpress-theme
+ * @link
  * @since 1.0.0
  */
 ?>
