@@ -181,12 +181,11 @@ function admin_check_shortcode( $atts, $content = null ) {
 }
 
 //change UserMetaPro system messages
+// not used $msgs['registration_completed']  = __( 'You\'ve successfully registered with Earlyarts.<br><br>If you\'d like to join, please continue to <a href="/choose-a-subscription">membership options</a>', $userMeta->name );    
 add_filter( 'user_meta_messages', 'earlyarts_user_meta_msg' );
 function earlyarts_user_meta_msg ($msgs) {
 
 $msgs['profile_updated']           = __( 'Information submitted, thank you.', $userMeta->name );
-
-$msgs['registration_completed']  = __( 'You\'ve successfully registered with Earlyarts.<br><br>If you\'d like to join, please continue to <a href="/choose-a-subscription">membership options</a>', $userMeta->name );    
 
 return $msgs;
 }
@@ -388,7 +387,6 @@ function new_mail_from_name($old) {
 }
 
 /** making a page to reset authentication cookies, to help fix problem with users appearing to be logged in, but not being able to see protected pages **/
-
 add_action ('reactor_page_after','ea_clear_auth_cookie');
 
 function ea_clear_auth_cookie()
@@ -407,3 +405,20 @@ require_once ('library/inc/ea-extras/ea-marketpress.php');
 
 // removes ref to marketpress styles
 add_theme_support( 'mp_style' );
+
+// User Meta Pro filters to encode characters when doing form based redirects (otherwise '?' get encoded )
+add_filter( 'user_meta_wp_hook', 'enableRegistrationRedirect', 10, 2 );
+function enableRegistrationRedirect( $enable, $hookName ) {
+    if ( 'registration_redirect' == $hookName )
+        $enable = true;
+
+    return $enable;
+}
+
+add_filter( 'registration_redirect', 'urlHtmlDecode' );
+function urlHtmlDecode( $redirect_to ) {
+    if ( ! empty( $redirect_to ) )
+        $redirect_to = html_entity_decode( $redirect_to );
+
+    return $redirect_to;
+}
