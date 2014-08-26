@@ -81,7 +81,7 @@ function reactor_child_theme_setup() {
 	// remove_theme_support('reactor-taxonomy-subnav');
 	
 	/* Remove support for shortcodes */
-	// remove_theme_support('reactor-shortcodes');
+	remove_theme_support('reactor-shortcodes');
 	
 	/* Remove support for tumblog icons */
 	remove_theme_support('reactor-tumblog-icons');
