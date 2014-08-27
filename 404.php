@@ -9,14 +9,17 @@
 ?>
 
 <?php get_header(); ?>
-
+<style>
+li.head {margin-bottom:0.5em;list-style-type:none;line-height:2em;}
+li.head strong{text-transform:uppercase}
+</style>
 	<div id="primary" class="site-content">
     
     	<?php reactor_content_before(); ?>
     
         <div id="content" role="main">
         	<div class="row">
-                <div class="<?php reactor_columns(); ?>">
+                <div class="<?php reactor_columns(8); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
 
@@ -30,10 +33,17 @@
 							<h3>Are you looking for any of these pages?</h3>
 							<div class="<?php reactor_columns(6); ?>">
 							<ul>
-								<li><a href="http://earlyarts.co.uk/about-us/" ><strong>About Us</a></strong></li>
-								<li><a href="http://earlyarts.co.uk/blog/" ><strong>Blog</a></strong></li>
-								<li><a href="http://earlyarts.co.uk/earlyarts-news/" ><strong>News</strong></a></li>
-								<li><strong>Free resources</strong>
+								<li class="head"><a href="http://earlyarts.co.uk/about-us/" ><strong>About Us</strong></a>
+								
+								<ul>
+								<li><a href="http://earlyarts.co.uk/about-us/contact-us/" title="Contact Us">Contact Us</a></li><li><a href="http://earlyarts.co.uk/about-us/our-team/" title="Our Team">Our Team</a></li><li><a href="http://earlyarts.co.uk/about-us/our-advisory-board/" title="Our Advisory Board">Our Advisory Board</a></li><li><a href="http://earlyarts.co.uk/about-us/our-patrons/" title="Our Patrons">Our Patrons</a></li><li><a href="http://earlyarts.co.uk/about-us/press-media/" title="Press and Media">Press and Media</a></li><li><a href="http://earlyarts.co.uk/about-us/terms-conditions/" title="Terms and Conditions">Terms and Conditions</a></p></li>
+								</ul>
+								
+								
+								</li>
+								<li class="head"><a href="http://earlyarts.co.uk/blog/" ><strong>Blog</a></strong></li>
+								<li class="head"><a href="http://earlyarts.co.uk/earlyarts-news/" ><strong>News</strong></a></li>
+								<li class="head"><strong>Free resources</strong>
 								<ul>
 									<li ><a href="http://earlyarts.co.uk/free-resources/construction-and-modelling/" >Construction and Modelling</a></li>
 									<li ><a href="http://earlyarts.co.uk/free-resources/dance-and-movement/" >Dance and Movement</a></li>
@@ -49,13 +59,13 @@
 									<li ><a href="http://earlyarts.co.uk/free-resources/storytelling-and-role-play/" >Storytelling and Role Play</a></li>
 								</ul>
 								</li>
-								<li><a href="http://earlyarts.co.uk/subscribe-to-earlyarts/" ><strong>Subscribe</strong></a></li>
+								<li class="head"><a href="http://earlyarts.co.uk/subscribe-to-earlyarts/" ><strong>Join Earlyarts</strong></a></li>
 								</ul>
 							</div>	
 							<div class="<?php reactor_columns(6); ?>">
-								<ul><li><strong>EYFS Teaching Packs</strong>
+								<ul><li class="head"><strong>EYFS Teaching Packs</strong>						
 								<ul>
-									<li><a href="http://earlyarts.co.uk/store/creative-teaching-makes-sense/">Why creative teaching makes sense</a></li>
+									<li><a href="http://earlyarts.co.uk/whats-special/">What's special about the packs?</a></li>
 									<li><a href="/store/products">All our packs</a></li>
 									<li><a href="http://earlyarts.co.uk/store/products/category/construction-modelling/">Construction and Modelling</a></li>
 									<li><a href="http://earlyarts.co.uk/store/products/category/drawing-writing-and-mark-making/">Drawing, Writing and Mark Making</a></li>
@@ -64,7 +74,7 @@
 									<li><a href="http://earlyarts.co.uk/store/products/category/story-building-and-role-play/">Story Building and Role Play</a></li>
 								</ul>
 								</li>
-								<li><strong>Research &#038; Evidence</strong>
+								<li class="head"><strong>Research &#038; Evidence</strong>
 								<ul class="sub-menu dropdown">
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/creativity-in-early-learning-research/">Creativity in Early Learning Research</a></li>
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/drawing-and-writing-research/">Drawing and Writing Research</a></li>
@@ -77,30 +87,36 @@
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/charters-for-childrens-rights/">Charters for Children&#8217;s Rights</a></li>
 								</ul>
 								</li>
-								<li><strong>Unconference</strong>
+								<li class="head"><strong>Events</strong>
 								<ul class="sub-menu dropdown">
+									<li><a href="http://earlyarts.co.uk/our-events/creative-eyfs-training-works/">Why Creative Training Works for Early Educators</a></li>
+									<li><a href="/events">Upcoming Events</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/shared-practice-networks/">Shared Practice Networks</a></li>
 									<li><a href="http://earlyarts.co.uk/unconference/earlyarts-unconference-2012/">Earlyarts UnConference 2012</a></li>
 								</ul>
 								</li>
-								<li><strong>Our Philosophy</strong>
-								<ul class="sub-menu dropdown">
-									<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-passion-creativity/">Earlyarts Passion for Creativity</a></li>
-									<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-values/">Earlyarts Values</a></li>
-									<li><a href="http://earlyarts.co.uk/philosophy/7-benefits-arts-early-childhood/">7 Benefits of the Arts in Early Childhood</a></li>
-									<li><a href="http://earlyarts.co.uk/philosophy/creativity-early-brain-development/">Early brain development</a></li>
-									<li><a href="http://earlyarts.co.uk/philosophy/young-children-learn/">How Young Children Learn</a></li>
-									<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-ambassadors/">Earlyarts Ambassadors</a></li>
-								</ul>
+								<li class="head"><strong>Our Philosophy</strong>
+									<ul class="sub-menu dropdown">
+										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-passion-creativity/">Earlyarts Passion for Creativity</a></li>
+										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-values/">Earlyarts Values</a></li>
+										<li><a href="http://earlyarts.co.uk/philosophy/7-benefits-arts-early-childhood/">7 Benefits of the Arts in Early Childhood</a></li>
+										<li><a href="http://earlyarts.co.uk/philosophy/creativity-early-brain-development/">Early brain development</a></li>
+										<li><a href="http://earlyarts.co.uk/philosophy/young-children-learn/">How Young Children Learn</a></li>
+										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-ambassadors/">Earlyarts Ambassadors</a></li>
+									</ul>
 								</li>
 								</ul>
 							</div>	
-							<p><strong><?php _e('If you can\'t find what you\'re looking for try returning to the <a href="/">home page</a>', 'earlyarts'); ?> or contact us on <a href="mailto:<?php echo antispambot('info@earlyarts.co.uk')?>"><?php echo antispambot('info@earlyarts.co.uk')?></a></strong></p>
+							
                         </div><!-- .entry-content -->
                     </article><!-- #post-0 -->
             
 				<?php reactor_inner_content_after(); ?>
                 
                 </div><!-- .columns -->
+				<div class="<?php reactor_columns(4); ?>">
+				<div class="panel"><p><strong><?php _e('If you can\'t find what you\'re looking for in this list, try returning to the <a href="/">home page</a>', 'earlyarts'); ?> or contact us on <a href="mailto:<?php echo antispambot('info@earlyarts.co.uk')?>"><?php echo antispambot('info@earlyarts.co.uk')?></a></strong></p></div><br>
+				</div>
                 
             </div><!-- .row -->
         </div><!-- #content -->
