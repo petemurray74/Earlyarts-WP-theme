@@ -29,7 +29,7 @@
 								<header class="entry-header">
 								<h1 class="entry-title">All Teaching Packs</h1>
 								<h3>Our creative EYFS teaching packs are based on trusted pedagogical approaches highlighting activities that support each child's learning.</h3>
-								<p><strong>More about <a href="/store/creative-teaching-makes-sense/">the packs and what makes them special</a></strong></p>
+								<p><strong>More about <a href="/whats-special/">the packs and what makes them special</a></strong></p>
 								</header>
 								
 									<?php reactor_page_header(); ?>
