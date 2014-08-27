@@ -47,10 +47,7 @@ function reactor_child_theme_setup() {
 	
 	/* Support for custom post types */
 	remove_theme_support('reactor-post-types');
-	add_theme_support(
-		'reactor-post-types',
-	 	array('slides')
-	 );
+	//add_theme_support('reactor-post-types',array('slides'));
 	
 	/* Support for page templates */
 	// remove_theme_support('reactor-page-templates');
@@ -81,7 +78,7 @@ function reactor_child_theme_setup() {
 	// remove_theme_support('reactor-taxonomy-subnav');
 	
 	/* Remove support for shortcodes */
-	remove_theme_support('reactor-shortcodes');
+	// remove_theme_support('reactor-shortcodes');
 	
 	/* Remove support for tumblog icons */
 	remove_theme_support('reactor-tumblog-icons');
