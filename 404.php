@@ -36,7 +36,9 @@ li.head strong{text-transform:uppercase}
 								<li class="head"><a href="http://earlyarts.co.uk/about-us/" ><strong>About Us</strong></a>
 								
 								<ul>
-								<li><a href="http://earlyarts.co.uk/about-us/contact-us/" title="Contact Us">Contact Us</a></li><li><a href="http://earlyarts.co.uk/about-us/our-team/" title="Our Team">Our Team</a></li><li><a href="http://earlyarts.co.uk/about-us/our-advisory-board/" title="Our Advisory Board">Our Advisory Board</a></li><li><a href="http://earlyarts.co.uk/about-us/our-patrons/" title="Our Patrons">Our Patrons</a></li><li><a href="http://earlyarts.co.uk/about-us/press-media/" title="Press and Media">Press and Media</a></li><li><a href="http://earlyarts.co.uk/about-us/terms-conditions/" title="Terms and Conditions">Terms and Conditions</a></p></li>
+								<li><a href="http://earlyarts.co.uk/about-us/contact-us/" title="Contact Us">Contact Us</a></li><li><a href="http://earlyarts.co.uk/about-us/our-team/" title="Our Team">Our Team</a></li>
+								<li><a href="http://earlyarts.co.uk/about-us/earlyarts-values/">Earlyarts Values</a></li><li><a href="http://earlyarts.co.uk/about-us/our-advisory-board/" title="Our Advisory Board">Our Advisory Board</a></li>	
+								<li><a href="http://earlyarts.co.uk/about-us/our-patrons/" title="Our Patrons">Our Patrons</a></li><li><a href="http://earlyarts.co.uk/about-us/press-media/" title="Press and Media">Press and Media</a></li><li><a href="http://earlyarts.co.uk/about-us/terms-conditions/" title="Terms and Conditions">Terms and Conditions</a></p></li>
 								</ul>
 								
 								
@@ -84,25 +86,25 @@ li.head strong{text-transform:uppercase}
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/music-research/">Music Research</a></li>
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/theatre-research/">Theatre Research</a></li>
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/international-pedagogies/">International Pedagogies</a></li>
-									<li><a href="http://earlyarts.co.uk/research-and-evidence/charters-for-childrens-rights/">Charters for Children&#8217;s Rights</a></li>
 								</ul>
 								</li>
 								<li class="head"><strong>Events</strong>
 								<ul class="sub-menu dropdown">
-									<li><a href="http://earlyarts.co.uk/our-events/creative-eyfs-training-works/">Why Creative Training Works for Early Educators</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/9-benefits-creative-training/">Nine Benefits of Creative Training</a></li>
 									<li><a href="/events">Upcoming Events</a></li>
 									<li><a href="http://earlyarts.co.uk/our-events/shared-practice-networks/">Shared Practice Networks</a></li>
-									<li><a href="http://earlyarts.co.uk/unconference/earlyarts-unconference-2012/">Earlyarts UnConference 2012</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2008/">Earlyarts UnConference 2008</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2010/">Earlyarts UnConference 2010</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2012/">Earlyarts UnConference 2012</a></li>
+									<li><a href="http://earlyarts.co.uk/our-events/national-strategic-round-table/">National Strategic Round Table</a></li>
 								</ul>
 								</li>
 								<li class="head"><strong>Our Philosophy</strong>
 									<ul class="sub-menu dropdown">
-										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-passion-creativity/">Earlyarts Passion for Creativity</a></li>
-										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-values/">Earlyarts Values</a></li>
 										<li><a href="http://earlyarts.co.uk/philosophy/7-benefits-arts-early-childhood/">7 Benefits of the Arts in Early Childhood</a></li>
 										<li><a href="http://earlyarts.co.uk/philosophy/creativity-early-brain-development/">Early brain development</a></li>
 										<li><a href="http://earlyarts.co.uk/philosophy/young-children-learn/">How Young Children Learn</a></li>
-										<li><a href="http://earlyarts.co.uk/philosophy/earlyarts-ambassadors/">Earlyarts Ambassadors</a></li>
+										<li><a href="http://earlyarts.co.uk/research-and-evidence/charters-for-childrens-rights/">Charters for Children's Rights</a></li>
 									</ul>
 								</li>
 								</ul>
