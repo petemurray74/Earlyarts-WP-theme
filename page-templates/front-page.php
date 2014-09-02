@@ -8,35 +8,27 @@
  */
 ?>
 
-<?php // get the options
-$slider_category = reactor_option('frontpage_slider_category', ''); ?>
-
 <?php get_header(); ?>
 
 	<div id="primary" class="site-content">
     
-    	<?php reactor_content_before(); 
-		// slider code removed from here, see original for code.
-		?>
+    	<?php reactor_content_before(); ?>
    
         <div id="content" role="main">
         	<div class="row">        
-                <div class="<?php reactor_columns(); ?>">
+                <div class="<?php reactor_columns(12); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
                 
-					<?php // get the page loop
-                    get_template_part('loops/loop', 'page'); ?>
-                        
-					<?php // get the main loop
-					//get_template_part('loops/loop', 'frontpage'); ?>
+					<?php the_content(); ?>
                     
                 <?php reactor_inner_content_after(); ?>
                 
                 </div><!-- .columns -->
-
-				<?php get_sidebar('frontpage'); ?>
             </div><!-- .row -->
+            <div class="row">     
+            <?php get_sidebar('frontpage'); ?>
+            </div><!-- .row -->            
         </div><!-- #content -->
         
         <?php reactor_content_after(); ?>
