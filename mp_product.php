@@ -23,7 +23,22 @@
 					<?php // get the page loop
                     //get_template_part('loops/loop', 'page'); 
 					$thisProdId=get_the_ID();
-					?>
+					
+                    //look for Product Tags and returning a specific Price: text
+                    $pre_text='Price:<br> ';
+                    $the_product_tags = get_the_terms($thisProdId,'product_tag');
+                    if ( $the_product_tags && ! is_wp_error( $the_product_tags ) ) : 
+
+                        $product_tag_name = array();
+
+                        foreach ( $the_product_tags as $the_product_tag ) {
+                            $product_tag_name[] = $the_product_tag->name;
+                        }
+                   endif;
+                    if (in_array('PDF-download', $product_tag_name))
+                    {$pre_text='PDF Download:<br>';}
+                    ?>
+
 					<?php reactor_page_before(); ?> 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<div class="entry-body">
@@ -31,20 +46,57 @@
 							<?php reactor_page_header(); ?>
 							<style type="text/css">
 							.mp_product_price {
-							line-height: 40px;
-							background: none;
-							margin-right: 0px;
-							padding:0;
+                            font-size:130%;    
 							}		
 							</style>
 							<div class="entry-content">
-								<?php //the_content(); 
-								mp_product_image($thisProdId);
-								mp_product_description($thisProdId);
-								mp_product_price($thisProdId);
+                                <div class="row">
+                                    <div class="column large-5 push-7 small-12">
+                                        <?php 
+                                        mp_product_image($thisProdId); 
+                                       
+                                        ?>
+                                    </div> 
+                                    <div class="column large-7 pull-5 small-12">
+                                    <p class="product-excerpt">
+                                    <?php
+                                    //show the excerpt
+                                    echo (get_the_excerpt());
+                                    ?></p>
+                                     <div class="panel" style="border:none;">
+                                     <div class="row" style="background:none;">
+                                      <div class="column large-6 small-12">
+                                <span class="preprice"><?php echo ($pre_text); ?></span>
+                                <?php
+                                mp_product_price(true,$thisProdId,'');
+                                if (current_user_on_level(5)) {echo '<div class="ea_mp_discount_price">Your 10% member discount will be applied in the checkout</div>';}
+                                ?>
+                                </div><div class="column large-6 small-12">
+                                <?php
 								mp_buy_button(true,'single',$thisProdId);
-								if (current_user_on_level(5)) {echo '&nbsp;<div class="success radius label ea_mp_discount_price">Your 10% member discount will be applied in the checkout</div>';}
 								?>
+                                </div></div></div>              
+                                <?php   
+                                mp_product_description($thisProdId);
+								?>
+                                    <div class="panel" style="border:none;">
+                                     <div class="row" style="background:none;">
+                                      <div class="column large-6 small-12">
+                                <span class="preprice"><?php echo ($pre_text); ?></span>
+                                <?php
+                                mp_product_price(true,$thisProdId,'');
+                                if (current_user_on_level(5)) {echo '<div class="ea_mp_discount_price">Your 10% member discount will be applied in the checkout</div>';}
+                                ?>
+                                </div><div class="column large-6 small-12">
+                                <?php
+								mp_buy_button(true,'single',$thisProdId);
+								?>
+                                </div></div></div>     
+                                    </div>     
+  
+                                    
+                                </div>
+								
 							</div><!-- .entry-content -->
 							
 							<footer class="entry-footer">

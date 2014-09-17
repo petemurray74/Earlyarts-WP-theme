@@ -108,7 +108,7 @@ function ea_mp_products_html_grid($post_array = array()) {
 
     foreach ($post_array as $post) {
 
-        $img = mp_product_image(false, 'list', $post->ID);
+        $img = mp_product_image(false, 'widget', $post->ID,120);
         $excerpt = $mp->get_setting('show_excerpt') ?
                 '<p class="mp_excerpt">' . $mp->product_excerpt($post->post_excerpt, $post->post_content, $post->ID, '') . '</p>' :
                 '';

@@ -27,7 +27,8 @@
                                 <header class="entry-header">
                                     <?php reactor_page_header();
                                     if ($cat_description=get_post_meta($post->ID,'category_description',true)){
-                                    echo ('<p>'.$cat_description).'</p>'; }
+                                    echo ('<p>'.$cat_description).'</p>'; 
+                                    }
                                     ?>
 								</header>	
 									<div class="entry-content">

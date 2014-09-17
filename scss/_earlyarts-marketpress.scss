@@ -15,10 +15,30 @@ float:none;
 }
 h3.ea_mp_product_name{
 @include font-size(17);
+    height:3em;
 }
 
 .mp_buy_form .mp_button_addcart{
 float:right;
+}
+
+.ea_mp_discount_price {
+    @include font-size(11);
+    font-style: italic;
+    color: #666;
+}
+
+.ea_mp_product_variant {
+    background: #eee;
+    padding: 1em;
+    margin-bottom:1em;
+}
+
+.product-excerpt {
+    color: #00879b;
+    font-weight: bold;
+    line-height: 115%;
+    @include font-size(17);
 }
 
 @media only screen and (min-width: 768px) {
@@ -29,6 +49,12 @@ padding: 0 1.2em 1.25em;
 
 div [itemprop=price-description] p {
 margin-bottom: 0;
+}
+
+.single-product .entry-content th{
+   color:$ea_lime;
+    @include font-size(18);
+    padding-left: 7px;
 }
 
 /*-----end earlyarts queries-------*/
