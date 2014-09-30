@@ -421,11 +421,9 @@ function urlHtmlDecode( $redirect_to ) {
 }
 
 
-//allow Mareketpress to show custom meta fields
-/*
+//allow Marketpress to show custom meta fields
 add_filter( 'mp_register_post_type', 'add_mp_custom_fields' );
 function add_mp_custom_fields($args) {
      $args['supports'] = array( 'title', 'editor', 'author', 'excerpt', 'revisions', 'thumbnail', 'custom-fields' );
      return $args;
 }
-*/
