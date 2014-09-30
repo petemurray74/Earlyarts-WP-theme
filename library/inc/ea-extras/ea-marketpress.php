@@ -83,7 +83,7 @@ function ea_mp_list_products($echo = true, $paginate = '', $page = '', $per_page
 			$layout_type = $list_view ? 'list' : 'grid';
 		}
 
-		$content = '<ul class="small-block-grid-2 large-block-grid-3">';
+		$content = '<ul class="small-block-grid-2 large-block-grid-4">';
 		
 		if ($last = $custom_query->post_count) {
 
@@ -107,32 +107,31 @@ function ea_mp_products_html_grid($post_array = array()) {
     $html = '';
 
     foreach ($post_array as $post) {
-
-        $img = mp_product_image(false, 'widget', $post->ID,120);
+// fixed size image
+        $img = mp_product_image(false, 'widget', $post->ID,200);
+        if ($ea_mp_list_page_info = get_post_meta($post->ID,'ea_mp_list_page_info',true)) 
+        {$ea_mp_list_page_info='<div class="ea_mp_list_page_info"><p>'.$ea_mp_list_page_info.'</p></div>'; }
+        else {$ea_mp_list_page_info='';}
         $excerpt = $mp->get_setting('show_excerpt') ?
                 '<p class="mp_excerpt">' . $mp->product_excerpt($post->post_excerpt, $post->post_content, $post->ID, '') . '</p>' :
                 '';
         $mp_product_list_content = apply_filters('mp_product_list_content', $excerpt, $post->ID);
 
         $html .= '<li>
-				<div class="ea_mp_product_detail">
-				' . $img . '
-				<h3 class="ea_mp_product_name"> 
+                <h3 class="ea_mp_product_name"> 
 				  <a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a>
 				</h3>
-				' . $mp_product_list_content . '
+				<div class="ea_mp_product_detail">
+				' . $img . $mp_product_list_content . '
 				</div>
 
-				<div class="ea_mp_price_buy">
-				' . mp_product_price(false, $post->ID,'From: ') . '
-				' . apply_filters('mp_product_list_meta', '', $post->ID) . '
-				</div>
+				'.$ea_mp_list_page_info
 				
-				<div class="ea_mp_buy">
-					<span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span>
-				</div>					
-              </li>';
-    }
+				//<div class="ea_mp_buy">
+				//	<span><a class="small button" href="'.get_permalink($post->ID) . '">&raquo More</a></span>
+				//</div>					
+              //</li>';
+    ;}
 
     return $html;
 }
