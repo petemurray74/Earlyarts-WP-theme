@@ -16,7 +16,7 @@
     
         <div id="content" role="main">
         	<div class="row">
-                <div class="<?php reactor_columns(); ?>">
+                <div class="<?php reactor_columns(8); ?>">
                 
                 <?php reactor_inner_content_before(); ?>
 				
@@ -96,7 +96,7 @@
   
                                     
                                 </div>
-								
+								 
 							</div><!-- .entry-content -->
 							
 							<footer class="entry-footer">
@@ -110,8 +110,9 @@
                 <?php reactor_inner_content_after(); ?>
                 
                 </div><!-- .columns -->
+                      <?php get_sidebar('store'); ?>   
                 
-                <?php get_sidebar('store'); ?>
+              
                 
             </div><!-- .row -->
         </div><!-- #content -->

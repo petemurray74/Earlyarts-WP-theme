@@ -116,15 +116,14 @@ function reactor_register_sidebars() {
 	}
 	
 	if ( in_array( 'store', $sidebars[0] ) ) {
-		$footer  = '<div id="%1$s" class="widget ';
-		$footer .= 'large-' . reactor_get_widget_columns('sidebar-store');
-		$footer .= ' columns %2$s">';
+		$store  = '<div id="%1$s" class="widget ';
+		$store .= ' %2$s">';
 		register_sidebar( array(
 			'name'          => __('Store', 'reactor'),
 			'id'            => 'sidebar-store',
 			'description'   => 'Store pages widget area',
 			'class'         => '',
-			'before_widget' => '<div id="%1$s" class="widget store-pages-widget %2$s">',
+			'before_widget' => $store,
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
