@@ -9,7 +9,13 @@
  
  /* the main store page, shows all products */
 ?>
-
+<?php
+// The wrong title was being displayed
+function fix_title(){
+return "All our Teaching and Training Resources";
+}
+add_filter('wp_title', 'fix_title', 100);
+?>
 <?php get_header(); ?>
 
 	<div id="primary" class="site-content">
