@@ -120,12 +120,21 @@ font-weight:bold;
 text-transform:uppercase;
 }
 
+.top-bar-section .join-menu a {
+    color:$ea_orange_dark;
+}
+
+.top-bar-section li.join-menu a:not(.button) {
+    text-shadow: 1px 0px 1px #cccccc;
+	}
+
 
 .top-bar .top-bar-section ul li:hover>a,
 .top-bar-section ul li>a:not(.button):hover,
 .top-bar-section ul li.active>a {
 background:#B6B5B6;
 color:$ea_turqoise;
+    text-shadow:0px 0px 0px;
 }
 
 
@@ -171,9 +180,12 @@ line-height:1.8;
 }
 
 .main-top-bar-wrapper .top-bar-section ul li.hover>a,
-.main-top-bar-wrapper .top-bar-section ul li>a:hover {
-background:#4b707f;
-color:#eee;
+.main-top-bar-wrapper .top-bar-section ul li>a:hover,
+.main-top-bar-wrapper .top-bar-section ul .current-menu-item a
+{
+background:$ea_turqoise;
+color:#ccc;
+text-shadow: 0px 1px 1px #111;    
 }
 
 
@@ -186,6 +198,18 @@ border-left: solid 1px #0B0C0C;
 .main-top-bar-wrapper .toggle-topbar.menu-icon a {
 text-indent: -80px;
 }
+
+
+//smaller forn for wrapped text
+.main-top-bar-wrapper .top-bar-section ul li>a
+{
+font-size:13px;
+}
+
+//make LIs change color - better for wrapped text
+.main-top-bar-wrapper .top-bar-section ul li:hover {
+background: #4b707f;
+}    
 
 /*-----------WIDGETS----------------*/
 
@@ -755,6 +779,10 @@ margin-left: 2px;
 select.um_input {
 height: 27px;
 height: 1.7rem;
+}
+
+textarea + .um_description, input + .um_description {
+margin-top: -10px;
 }
 
 
