@@ -79,6 +79,9 @@ padding: 0 1.2em 1.25em;
 }
 }
 
+.mp_cart_contents th
+{ font-weight: normal}
+
 div [itemprop=price-description] p {
 margin-bottom: 0;
 }
@@ -340,22 +343,22 @@ background: #eeeeee;
 }
 
 .mp_cart_contents th.mp_cart_col_product {
-background: url('../images/store/modern-images/basket.png') no-repeat 5px 7px;
+background: url('../images/store/modern-images/basket.png') no-repeat 9px 2px;
 padding: 6px 0px 5px 30px;
 }
 
 .mp_cart_contents th.mp_cart_col_price {
-background: url('../images/store/modern-images/money.png') no-repeat 5px 7px;
+background: url('../images/store/modern-images/money.png') no-repeat 9px 4px;
 padding: 6px 0px 5px 30px;
 }
 
 .mp_cart_contents th.mp_cart_col_quant {
-background: url('../images/store/modern-images/basket_add.png') no-repeat 5px 7px;
+background: url('../images/store/modern-images/basket_add.png') no-repeat 9px 3px;
 padding: 6px 0px 5px 30px;
 }
 
 .mp_cart_shipping thead {
-background: #eeeeee url('../images/store/modern-images/lorry.png') no-repeat 5px 6px;
+background: #eeeeee url('../images/store/modern-images/lorry.png') no-repeat 9px 2px;
 padding: 6px 0px 5px 30px;
 }
 
