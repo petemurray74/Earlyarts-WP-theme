@@ -152,7 +152,13 @@ border-left: solid 1px #A0A0A0;
 /*-main menu using Foundation's top bar-*/
 
 .main-top-bar-wrapper {
-border-top: 5px solid $ea_turqoise;
+background:$ea_turqoise;
+}
+
+.main-top-bar-wrapper .menu-strap {
+    padding: 5px 0px 5px 14px;
+    color: #eee;
+    font-size: 90%;
 }
 
 .main-top-bar-wrapper .top-bar,

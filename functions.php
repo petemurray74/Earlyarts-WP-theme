@@ -261,12 +261,22 @@ function reactor_do_main_top_bar() {
 			'sticky'     => false			
 		);
 		echo ('<div class="main-top-bar-wrapper">');
-		reactor_top_bar( $topbar_args );
+		ea_main_menu_header();
+        reactor_top_bar( $topbar_args );
 		echo ('</div>');
 	}
 }
 add_action('reactor_header_after', 'reactor_do_main_top_bar', 3);
 
+function ea_main_menu_header()
+    {
+    ?>
+        <div class="row">
+            <div class="columns large-5 menu-strap">Creative teaching and training resources for the EYFS
+            </div>
+        </div>
+    <?php
+    } 
 
 /*--add image to each page between menu and content area ----*/
 
