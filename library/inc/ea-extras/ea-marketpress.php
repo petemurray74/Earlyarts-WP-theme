@@ -83,7 +83,7 @@ function ea_mp_list_products($echo = true, $paginate = '', $page = '', $per_page
 			$layout_type = $list_view ? 'list' : 'grid';
 		}
 
-		$content = '<ul class="small-block-grid-2 large-block-grid-4">';
+		$content = '<ul class="small-block-grid-1 large-block-grid-4">';
 		
 		if ($last = $custom_query->post_count) {
 
@@ -118,14 +118,13 @@ function ea_mp_products_html_grid($post_array = array()) {
         $mp_product_list_content = apply_filters('mp_product_list_content', $excerpt, $post->ID);
 
         $html .= '<li>
-                <h3 class="ea_mp_product_name"> 
-				  <a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a>
-				</h3>
 				<div class="ea_mp_product_detail">
 				' . $img . $mp_product_list_content . '
 				</div>
-
-				'.$ea_mp_list_page_info
+                <h3 class="ea_mp_product_name"> 
+				  <a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a>
+				</h3>'
+                .$ea_mp_list_page_info
 				
 				//<div class="ea_mp_buy">
 				//	<span><a class="small button" href="'.get_permalink($post->ID) . '">&raquo More</a></span>
