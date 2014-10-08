@@ -8,7 +8,7 @@ This is MarketPress Style Earlyarts
 margin-bottom: 10px;
 }
 .ea_mp_product_name {
-margin-top: 15px;
+margin: 7px 0 2px 0;
 }
 .ea_mp_product_detail img {
 float:none;
@@ -34,7 +34,7 @@ h3.ea_mp_product_name{
 }
 
 .ea_mp_list_page_info {
-    margin:1em 0;
+    margin: 2px 0;
     p {
         line-height:1.4;
         @include font-size(12);
@@ -273,10 +273,10 @@ margin-bottom: 5px;
 }
 
 .mp_product_image_list, .mp_product_image_single, .mp_product_image_widget {
--moz-box-shadow: 3px 3px 4px #cccccc; 
- -webkit-box-shadow: 3px 3px 4px #cccccc; 
- box-shadow: 3px 3px 4px #cccccc;
-border: 1px solid #eeeeee;
+-moz-box-shadow: 1px 1px 4px #cccccc; 
+ -webkit-box-shadow: 1px 1px 4px #cccccc; 
+ box-shadow: 1px 1px 4px #cccccc;
+//border: 1px solid #eeeeee;
 
 }
 
