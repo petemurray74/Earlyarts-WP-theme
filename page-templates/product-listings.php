@@ -46,6 +46,27 @@
 										<div class="ea-mp-list-page-body">
 										<?php the_content(); ?>
 										</div>
+                                       
+                                        <ul class="small-block-grid-1 large-block-grid-2 content-foot-block">
+                                            <li><h2>Join us for a 10% Discount</h2>
+                                            <p>As an Earlyarts member, you'll receive
+                                            </p>
+                                            <ul>
+                                            <li>10% off all products</li>
+                                            <li>Free training webinars</li>
+                                            <li>Exclusive teaching pack extracts</li></ul>
+                                            <p><a class="radius success button" href="/subscribe-to-earlyarts/">Join us</a></p>
+                                            </li>
+                                            <li>
+                                            <h2>Free Early Years Bulletin</h2>
+                                            <p>Every month we choose you the best and most relevant links</p>
+                                                <ul>
+                                                <li>Training opportunities</li>
+                                                <li>Relevant resources</li>
+                                                <li>New research</li>
+                                                </ul>
+                                            <p><a class="radius success button" href="/subscribe-e-bulletin/">Get the e-bulletin</a></p></li>
+                                        </ul>
 									</div><!-- .entry-content -->
                                     <?php
                                     }
