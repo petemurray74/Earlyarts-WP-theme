@@ -43,8 +43,10 @@ h3.ea_mp_product_name{
 }
 
 .ea-mp-list-page-body {
-    background:$ea_widget_bk;
     padding: 1em;
+    border: 1px dotted #ddd;
+    border-left:0;
+    border-right:0;
     a{
      text-decoration: underline;
     }
