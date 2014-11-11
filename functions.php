@@ -261,7 +261,7 @@ function reactor_do_main_top_bar() {
 			'sticky'     => false			
 		);
 		echo ('<div class="main-top-bar-wrapper">');
-		ea_main_menu_header();
+		//ea_main_menu_header();
         reactor_top_bar( $topbar_args );
 		echo ('</div>');
 	}
@@ -285,7 +285,7 @@ function earlyarts_hero_image () {
 <div class="hero">
 	<div class="row">
 		<div class="<?php reactor_columns( 12 ); ?> header-hero">
-			<img src="https://farm6.staticflickr.com/5543/14061349481_01a492a6e4_o.jpg" width="988" height="190">
+			<img src="https://farm6.staticflickr.com/5543/14061349481_4528622be9_o.jpg" width="988" height="190">
 		</div>	
 	</div>
 </div>
