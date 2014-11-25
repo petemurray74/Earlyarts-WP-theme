@@ -8,46 +8,13 @@ This is MarketPress Style Earlyarts
 margin-bottom: 10px;
 }
 .ea_mp_product_name {
-margin: 7px 0 2px 0;
+margin-top: 15px;
 }
 .ea_mp_product_detail img {
 float:none;
 }
 h3.ea_mp_product_name{
 @include font-size(17);
-    line-height:1.1;
-}
-
-.ea-mp-order-area{
-    background: rgba(159,208,52,0.05);
-    border-top: 3px solid #9dca3a;
-    text-align: center;
-    padding: 1em 0px 0px;
-}
-
-.ea_mp_buy{
-    margin:1em 0;
-}
-
-.page-template-page-templatesproduct-listings-php [class*="block-grid-"]{
-    margin-bottom: 1em;
-}
-
-.ea_mp_list_page_info {
-    margin: 2px 0;
-    p {
-        line-height:1.4;
-        @include font-size(12);
-        margin-bottom: 0;
-    }
-}
-
-.ea-mp-list-page-body {
-    background:$ea_widget_bk;
-    padding: 1em;
-    a{
-     text-decoration: underline;
-    }
 }
 
 .mp_buy_form .mp_button_addcart{

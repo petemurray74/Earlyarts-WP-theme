@@ -37,30 +37,10 @@
 	line-height: 45px;
 	}
 	
-    .main-top-bar-wrapper .top-bar-section>ul>.divider, 
+	.main-top-bar-wrapper .top-bar-section>ul>.divider, 
 	.main-top-bar-wrapper .top-bar-section>ul>[role="separator"] {
 	height:$main-menu-height;
 	}
-	
-
-    // fix width and height to allow for text wrapping 
-	/*.main-top-bar-wrapper .top-bar-section li a:not(.button)
-	{
-	line-height: 1.3;
-	width:128px;
-	padding: 7px 10px 4px 12px;
-	font-weight:normal;
-    color:#eee;
-    text-shadow: 0px 1px 1px #111;
-    height:$main-menu-height;
-	}
-   
-
-	.main-top-bar-wrapper .top-bar-section ul li {
-	height: $main-menu-height;
-	}
-     */
-
     
 }
 	

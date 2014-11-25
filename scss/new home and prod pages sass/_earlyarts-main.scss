@@ -120,21 +120,11 @@ font-weight:bold;
 text-transform:uppercase;
 }
 
-.top-bar-section .join-menu a {
-    color:$ea_orange_dark;
-}
-
-.top-bar-section li.join-menu a:not(.button) {
-    text-shadow: 1px 0px 1px #cccccc;
-	}
-
-
 .top-bar .top-bar-section ul li:hover>a,
 .top-bar-section ul li>a:not(.button):hover,
 .top-bar-section ul li.active>a {
 background:#B6B5B6;
 color:$ea_turqoise;
-    text-shadow:0px 0px 0px;
 }
 
 
@@ -152,14 +142,10 @@ border-left: solid 1px #A0A0A0;
 /*-main menu using Foundation's top bar-*/
 
 .main-top-bar-wrapper {
+background:$ea_turqoise;
 border-top: 5px solid $ea_turqoise;
 }
 
-.main-top-bar-wrapper .menu-strap {
-    padding: 5px 0px 5px 14px;
-    color: #eee;
-    font-size: 90%;
-}
 
 .main-top-bar-wrapper .top-bar,
 .main-top-bar-wrapper .top-bar-section ul li>a,
@@ -184,15 +170,10 @@ font-weight: normal;
 line-height:1.8;
 }
 
-.main-top-bar-wrapper .top-bar-section ul li.hover>a,
-.main-top-bar-wrapper .top-bar-section ul li>a:hover,
-{
+.main-top-bar-wrapper .top-bar-section ul li.hover>a, .main-top-bar-wrapper .top-bar-section ul li>a:hover {
 background:#4b707f;
 color:#eee;
-//text-shadow: 0px 1px 1px #111;    
 }
-//.main-top-bar-wrapper .top-bar-section ul .current-menu-item a
-
 
 .main-top-bar-wrapper .top-bar-section>ul>.divider, 
 .main-top-bar-wrapper .top-bar-section>ul>[role="separator"] {
@@ -204,10 +185,15 @@ border-left: solid 1px #0B0C0C;
 text-indent: -80px;
 }
 
-
+//smaller forn for wrapped text
+.main-top-bar-wrapper .top-bar-section ul li>a
+{
+font-size:13px;
+}
+     
 //make LIs change color - better for wrapped text
 .main-top-bar-wrapper .top-bar-section ul li:hover {
-background: $ea_turqoise;
+background: #4b707f;
 }    
 
 /*-----------WIDGETS----------------*/
