@@ -68,7 +68,7 @@ function reactor_do_title_logo() { ?>
                 <div class="site-logo">
 				<?php // call to Reactor options removed, both to remove PHP work and allow us to use a external URL for the logo ?>
 					<a href="/" title="Earlyarts" rel="home">
-						<img src="http://d2emezon9dql37.cloudfront.net/earlyarts-logo-header.png" width="494" height="137" alt="Earlyarts logo">
+						<img src="http://dm16174grt2cj.cloudfront.net/earlyarts-logo-header.png" width="494" height="137" alt="Earlyarts logo">
 					</a>
 				</div><!-- .site-logo -->
 				<div class="title-area">
