@@ -20,9 +20,8 @@
 					<div id="side-menu">
                     <?php reactor_side_menu(); ?>
 					</div><!-- #side-menu -->
-					 <div id="sidebar" class="sidebar" role="complementary">
+					 <div id="sidebar" class="primary-generic-sidebar" role="complementary">
 						<?php 
-						if (is_active_sidebar('sidebar')) : dynamic_sidebar('sidebar'); endif;
 						if (is_active_sidebar('primary-generic')) : dynamic_sidebar('primary-generic'); endif;
 						?>
 					</div>
