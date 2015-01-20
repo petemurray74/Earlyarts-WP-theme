@@ -29,16 +29,18 @@
                     if ( !get_post_format() ) : get_template_part('post-formats/format', 'standard'); 
 					else : get_template_part('post-formats/format', get_post_format() ); endif; ?>
                     
+                    <?php get_template_part('get-updates'); ?>
+                    
                     <?php get_template_part('social-sharing-footer'); ?>
                     
                     <?php reactor_post_after(); ?>
         
                     <?php endwhile; // end of the loop ?>
                     
-                    
                 <?php reactor_inner_content_after(); ?>         
                     
-                </div><!-- .columns -->
+                </div>
+                    <!-- .columns -->
                 
                 <?php get_sidebar(); ?>
                 
