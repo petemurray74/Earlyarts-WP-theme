@@ -66,13 +66,38 @@ function reactor_register_sidebars() {
 			'id'            => 'sidebar-frontpage',
 			'description'   => 'Primary sidebar for the front page template',
 			'class'         => '',
-			'before_widget' => '<div id="%1$s" class="large-'.reactor_get_widget_columns('sidebar-frontpage').' columns widget frontpage-widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
 		) );
 	}
 	
+	if ( in_array( 'front-secondary', $sidebars[0] ) ) {
+		register_sidebar( array(
+			'name'          => __('Front Page Secondary', 'reactor'),
+			'id'            => 'sidebar-frontpage-2',
+			'description'   => 'Secondary sidebar for the front page template',
+			'class'         => '',
+			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	}
+	
+	if ( in_array( 'front-tertiary', $sidebars[0] ) ) {
+		register_sidebar( array(
+			'name'          => __('Front Page Tertiary', 'reactor'),
+			'id'            => 'sidebar-frontpage-3',
+			'description'   => 'Tertiary sidebar for the front page template',
+			'class'         => '',
+			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	}
 
 	if ( in_array( 'footer', $sidebars[0] ) ) {
 		$footer  = '<div id="%1$s" class="widget top-bar-widget ';
@@ -91,14 +116,15 @@ function reactor_register_sidebars() {
 	}
 	
 	if ( in_array( 'store', $sidebars[0] ) ) {
-		$store  = '<div id="%1$s" class="widget ';
-		$store .= ' %2$s">';
+		$footer  = '<div id="%1$s" class="widget ';
+		$footer .= 'large-' . reactor_get_widget_columns('sidebar-store');
+		$footer .= ' columns %2$s">';
 		register_sidebar( array(
 			'name'          => __('Store', 'reactor'),
 			'id'            => 'sidebar-store',
 			'description'   => 'Store pages widget area',
 			'class'         => '',
-			'before_widget' => $store,
+			'before_widget' => '<div id="%1$s" class="widget store-pages-widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',

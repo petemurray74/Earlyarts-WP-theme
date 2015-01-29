@@ -336,6 +336,38 @@ border-bottom: 1px dotted white;
 	}
 }
 
+.primary-generic-sidebar .RHS-advert2
+{
+background: $ea_dk_blue; 
+    padding:1.5em;
+    color: #eee;
+    text-align: center;
+  .widget-title {
+      color:$ea_lime;
+      font-weight: normal;
+      @include font-size(26);
+      text-transform:none;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .heading {
+        font-size:130%;
+        font-weight:bold;
+        letter-spacing: -0.04em;
+    }
+    
+    .light{
+        color:#eee;
+    }
+    .button {
+        width:60%;
+    }
+}
+
+.primary-generic-sidebar .full-bleed {
+ padding:0;        
+}
+
 
 /*-product listings in RHS-*/
 .widget #mp_product_list li {
@@ -500,7 +532,10 @@ background: #00879b;
 color:#000;
 -webkit-box-shadow: 0 0 0;
 box-shadow: 0 0 0;
-text-shadow: 0px 1px 0px rgba(101, 182, 194, 0.6);
+text-shadow: 0 0 0;
+        label {
+        color:#fff;
+    }
 }
 
 hr.greydotted{
