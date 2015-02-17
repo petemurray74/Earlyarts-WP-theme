@@ -64,16 +64,17 @@ li.head strong{text-transform:uppercase}
 								<li class="head"><a href="http://earlyarts.co.uk/subscribe-to-earlyarts/" ><strong>Join Earlyarts</strong></a></li>
 								</ul>
 							</div>	
-							<div class="<?php reactor_columns(6); ?>">
+							<div class="<?php reactor_columns(6); ?>">                       
+                                
 								<ul><li class="head"><strong>EYFS Teaching Packs</strong>						
 								<ul>
-									<li><a href="http://earlyarts.co.uk/whats-special/">What's special about the packs?</a></li>
-									<li><a href="/store/products">All our packs</a></li>
-									<li><a href="http://earlyarts.co.uk/store/products/category/construction-modelling/">Construction and Modelling</a></li>
-									<li><a href="http://earlyarts.co.uk/store/products/category/drawing-writing-and-mark-making/">Drawing, Writing and Mark Making</a></li>
-									<li><a href="http://earlyarts.co.uk/store/products/category/movement-and-dance/">Movement and Dance</a></li>
-									<li><a href="http://earlyarts.co.uk/store/products/category/photography-and-video/">Photography and Video</a></li>
-									<li><a href="http://earlyarts.co.uk/store/products/category/story-building-and-role-play/">Story Building and Role Play</a></li>
+                                    <li><a href="http://earlyarts.co.uk/whats-special/">What’s special about the packs?</a></li>
+                                    <li><a href="/store/products">All our packs</a></li>
+                                    <li><a href="http://earlyarts.co.uk/store/products/category/crafts-construction-modelling/">Crafts, Construction and Modelling</a></li>
+                                    <li><a href="http://earlyarts.co.uk/store/products/category/drawing-writing-and-mark-making/">Drawing, Writing and Mark Making</a></li>
+                                    <li><a href="http://earlyarts.co.uk/store/products/category/movement-and-dance/">Movement and Dance</a></li>
+                                    <li><a href="http://earlyarts.co.uk/store/products/category/ict-photography-and-video/">ICT, Photography and Video</a></li>
+                                    <li><a href="http://earlyarts.co.uk/store/products/category/puppets-story-building-and-role-play/">Puppets, Story Building and Role Play</a></li>
 								</ul>
 								</li>
 								<li class="head"><strong>Research &#038; Evidence</strong>
