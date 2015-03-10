@@ -160,7 +160,8 @@ add_filter( 'mp_product_price', 'mp_membership_price_discount' );
 //  [printversion productid=5232] 
 function PrintVersionBox($params) {
 	extract(shortcode_atts(array(
-		'productid' => 6620
+		'productid' => 6620,
+        'textlabel' => 'Printed version'
 	), $params));
 	
 	return
@@ -168,8 +169,7 @@ function PrintVersionBox($params) {
 	<div class="panel" style="border:none;">
 		<div class="row" style="background:none;">
 			<div class="column large-6 small-12">
-			<span class="preprice">Printed Version:<br></span>
-			<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="mp_product_price"><span itemprop="price" class="mp_normal_price"><span class="mp_current_price">'.do_shortcode("[mp_product_price product_id=\"$productid\" label=\"\"]").'</span></span></span>                                
+			<span class="preprice">'.$textlabel.':<br></span>'.do_shortcode("[mp_product_price product_id=\"$productid\" label=\"\"]").'
 			</div>
 			<div class="column large-6 small-12">
 			<form class="mp_buy_form" method="post" action="/store/shopping-cart/" style="display: block;"><input type="hidden" name="product_id" value="'.$productid.'"><input type="hidden" name="variation" value="0"><input type="hidden" name="action" value="mp-update-cart"><input class="mp_button_addcart" type="submit" name="addcart" value="Add To Cart »"></form>                                
@@ -230,7 +230,7 @@ add_shortcode('packcontents','PackContentsTable');
 function BuyBoxSetNow() {
 	return
 '
-<a class="button radius secondary small" title="Earlyarts Box Set" href="/store/products/nurturing-young-childrens-learning-box-set/" target="_blank">Save a whopping 40% and buy this pack in a box-set!</a>
+<a class="button radius secondary small" title="Earlyarts Box Set" href="/store/products/nurturing-young-childrens-learning-box-set/" >Save a whopping 40% and buy this pack in a box-set!</a>
 ';
 	
 }
