@@ -36,7 +36,7 @@
                         }
                    endif;
                     if (in_array('PDF-download', $product_tag_name))
-                    {$pre_text='PDF Download:<br>';}
+                    {$pre_text='PDF version:<br>';}
                     ?>
 
 					<?php reactor_page_before(); ?> 
