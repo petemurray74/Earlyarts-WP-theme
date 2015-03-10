@@ -126,16 +126,15 @@ function ea_mp_products_html_grid($post_array = array()) {
 				<div class="ea_mp_price_buy">
 				' . mp_product_price(false, $post->ID,'From: ') . '
 				' . apply_filters('mp_product_list_meta', '', $post->ID) . '
-				</div>
-				
-				<div class="ea_mp_buy">
-					<span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span>
 				</div>					
               </li>';
     }
 
     return $html;
 }
+// BUY BUTTON removed
+// <div class="ea_mp_buy"><span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span></div>
+
 
 //
 // Function to apply discounts to members
@@ -155,3 +154,85 @@ function mp_membership_price_discount( $price ){
 	return $price;
 }
 add_filter( 'mp_product_price', 'mp_membership_price_discount' );
+
+// shortcode to add an 'add to cart' button to a page
+
+//  [printversion productid=5232] 
+function PrintVersionBox($params) {
+	extract(shortcode_atts(array(
+		'productid' => 6620
+	), $params));
+	
+	return
+	'
+	<div class="panel" style="border:none;">
+		<div class="row" style="background:none;">
+			<div class="column large-6 small-12">
+			<span class="preprice">Printed Version:<br></span>
+			<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="mp_product_price"><span itemprop="price" class="mp_normal_price"><span class="mp_current_price">'.do_shortcode("[mp_product_price product_id=\"$productid\" label=\"\"]").'</span></span></span>                                
+			</div>
+			<div class="column large-6 small-12">
+			<form class="mp_buy_form" method="post" action="/store/shopping-cart/" style="display: block;"><input type="hidden" name="product_id" value="'.$productid.'"><input type="hidden" name="variation" value="0"><input type="hidden" name="action" value="mp-update-cart"><input class="mp_button_addcart" type="submit" name="addcart" value="Add To Cart »"></form>                                
+			</div>
+		</div>
+	</div>
+';
+	
+}
+add_shortcode('printversion','PrintVersionBox');
+
+
+// shortcode to add pack contents table
+//  [packcontents] 
+function PackContentsTable() {
+	return
+'
+<table width="100%">
+<thead>
+<tr>
+<th>THIS PACK CONTAINS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artists\' Intention and Learning Objectives</td>
+</tr>
+<tr>
+<td>Step-by-Step Creative Activity Plans</td>
+</tr>
+<tr>
+<td>Environment and Resource Lists</td>
+</tr>
+<tr>
+<td>Top Tips to support Additional Learning Needs</td>
+</tr>
+<tr>
+<td>Guidance for Reflection and Planning</td>
+</tr>
+<tr>
+<td>Activities Mapped against EYFS Areas of Learning</td>
+</tr>
+<tr>
+<td>Case Study of Activities in Practice</td>
+</tr>
+<tr>
+<td><strong>Each pack has between 16-24 pages, in full colour, and has an easy-to-clean matt laminate cover</strong></td>
+</tr>
+</tbody>
+</table>
+';
+	
+}
+add_shortcode('packcontents','PackContentsTable');
+
+// shortcode to add buy now button
+//  [buyboxset] 
+function BuyBoxSetNow() {
+	return
+'
+<a class="button radius secondary small" title="Earlyarts Box Set" href="/store/products/nurturing-young-childrens-learning-box-set/" target="_blank">Save a whopping 40% and buy this pack in a box-set!</a>
+';
+	
+}
+add_shortcode('buyboxset','BuyBoxSetNow');
+
