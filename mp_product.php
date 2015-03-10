@@ -79,19 +79,7 @@
                                 <?php   
                                 mp_product_description($thisProdId);
 								?>
-                                    <div class="panel" style="border:none;">
-                                     <div class="row" style="background:none;">
-                                      <div class="column large-6 small-12">
-                                <span class="preprice"><?php echo ($pre_text); ?></span>
-                                <?php
-                                mp_product_price(true,$thisProdId,'');
-                                if (current_user_on_level(5)) {echo '<div class="ea_mp_discount_price">Your 10% member discount will be applied in the checkout</div>';}
-                                ?>
-                                </div><div class="column large-6 small-12">
-                                <?php
-								mp_buy_button(true,'single',$thisProdId);
-								?>
-                                </div></div></div>     
+                                     
                                     </div>     
   
                                     
