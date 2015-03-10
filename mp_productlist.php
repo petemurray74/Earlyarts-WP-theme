@@ -42,7 +42,7 @@ add_filter('wp_title', 'fix_title', 100);
 										<?php 
 										// show only products tagged with 'teaching-guides'
 										//ea_mp_list_products(true,'','','','','','','teaching-guides'); 
-										ea_mp_list_products(true,'','','','','','','teaching-guides'); 
+										ea_mp_list_products(true,'','','30','','','','teaching-guides'); 
 										?>
 									</div><!-- .entry-content -->
 									
