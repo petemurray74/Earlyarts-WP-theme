@@ -33,9 +33,11 @@ add_filter('wp_title', 'fix_title', 100);
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<div class="entry-body">
 								<header class="entry-header">
-								<h1 class="entry-title">All Teaching Packs</h1>
-								<h3>Our creative EYFS teaching packs are based on trusted pedagogical approaches highlighting activities that support each child's learning.</h3>
-								<p><strong>More about <a href="/whats-special/">the packs and what makes them special</a></strong></p>
+								<h1 class="entry-title">Creative EYFS teaching packs</h1>
+								<h3>Based on trusted pedagogical approaches highlighting activities that support each child's learning</h3>
+                                    <div class="panel">Planning which pack to buy? 
+<a href="http://dm16174grt2cj.cloudfront.net/learning-area-grid-starter-chart.pdf" target="_blank">See how each pack links to EYFS Areas of Learning and Development</a></div>
+								
 								</header>
 											
 									<div class="entry-content">
@@ -44,6 +46,7 @@ add_filter('wp_title', 'fix_title', 100);
 										//ea_mp_list_products(true,'','','','','','','teaching-guides'); 
 										ea_mp_list_products(true,'','','30','','','','teaching-guides'); 
 										?>
+                                        <div class="panel"><p><strong>More about <a href="/whats-special/">the packs and what makes them special</a></strong></p></div>
 									</div><!-- .entry-content -->
 									
 									<footer class="entry-footer">
