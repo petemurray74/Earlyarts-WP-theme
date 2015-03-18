@@ -525,16 +525,13 @@ line-height:1.3;
 }
 
 .panel.callout {
-border: 1px solid #005b68;
-margin-bottom: 1.25em;
-padding: 1.25em;
-background: #00879b;
-color:#000;
--webkit-box-shadow: 0 0 0;
-box-shadow: 0 0 0;
-text-shadow: 0 0 0;
+color:#fff;
         label {
         color:#fff;
+    }
+    a {
+        color:#eee;
+        text-decoration: underline;
     }
 }
 

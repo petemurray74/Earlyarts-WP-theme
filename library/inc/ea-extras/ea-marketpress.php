@@ -230,7 +230,7 @@ add_shortcode('packcontents','PackContentsTable');
 function BuyBoxSetNow() {
 	return
 '
-<a class="button radius secondary small" title="Earlyarts Box Set" href="/store/products/nurturing-young-childrens-learning-box-set/" >Save a whopping 40% and buy this pack in a box-set!</a>
+<a class="button radius primary medium" title="Earlyarts Box Set" href="/store/products/nurturing-young-childrens-learning-box-set/" >Save a whopping 40% and buy this pack in a box-set!</a>
 ';
 	
 }
