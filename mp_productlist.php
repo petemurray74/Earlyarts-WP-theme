@@ -34,9 +34,9 @@ add_filter('wp_title', 'fix_title', 100);
 								<div class="entry-body">
 								<header class="entry-header">
 								<h1 class="entry-title">Creative EYFS teaching packs</h1>
-								<h3>Based on trusted pedagogical approaches highlighting activities that support each child's learning</h3>
-                                    <div class="panel callout"><strong>Choosing which pack to buy?</strong> 
-<a href="http://dm16174grt2cj.cloudfront.net/learning-area-grid-starter-chart.pdf" target="_blank">See how each pack links to EYFS Areas of Learning and Development</a></div>
+								<h3>Based on trusted pedagogical approaches with practical activities that support each child's learning</h3>
+                                    <div class="panel callout radius"><strong>Which pack to choose?</strong> 
+<a href="http://dm16174grt2cj.cloudfront.net/learning-area-grid-starter-chart.pdf" target="_blank">See how they link to EYFS Areas of Learning &amp; Development</a></div>
 								
 								</header>
 											
