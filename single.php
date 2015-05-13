@@ -9,7 +9,6 @@
 ?>
 
 <?php get_header(); ?>
-
 	<div id="primary" class="site-content">
     
     	<?php reactor_content_before(); ?>
@@ -52,3 +51,8 @@
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>
+
+<? 
+// set an arbitary Javascript variable to be read by google tag manager
+if (in_category('blog')) {?><script>GAcontentGroup="blog"</script><?php;}
+?>
