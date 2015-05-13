@@ -17,7 +17,7 @@
 		<a href="/about-us">More about us</a> &raquo;</p>
 		<p>General enquiries:<br>
 		info@earlyarts.co.uk<br>
-		or call 01484 308819</p>
+		or call 01484 685869</p>
 		<p><a href="/about-us/contact-us/">Contact us</a> &raquo;<br>
 		<a href="/about-us/terms-conditions/">Terms and conditions</a> &raquo;</p>
 	</div>
