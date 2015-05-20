@@ -25,7 +25,7 @@
         
                     <?php // show category description if there is one, else the title 
 					if ( category_description() ) : ?>
-						<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1><h4><?php echo strip_tags(category_description()); ?></h4>
+						<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1><?php echo wpautop(category_description()) ?>
 					<?php else:?>
 						<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1>
                     <?php endif; ?>
