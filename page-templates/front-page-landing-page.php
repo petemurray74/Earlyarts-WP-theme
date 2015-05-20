@@ -37,20 +37,17 @@
         <?php reactor_content_after(); ?>
         
 <?php 
-if (get_post_meta($post->ID,'include_sidebar',true)=='yes')
-    {
-    if (is_active_sidebar('frontpage')) : 
+    if (is_active_sidebar('sidebar-frontpage')) : 
     ?>
     <div class="row">
-    <div id="secondary" class="large-12 columns frontpage-sidebar">
+    <div id="secondary" class="frontpage-sidebar">
     <?php
-    dynamic_sidebar('frontpage'); 
+    dynamic_sidebar('sidebar-frontpage'); 
     endif;
     ?>
     </div></div>  
-        </div><!-- #primary -->
+       
     <?php
-    }
 
 // this Javascript takes variable from a query string and adds them to a form as hidden fields
 // from http://www.terminusapp.com/blog/bet-you-havent-used-utm-parameters-like-this
@@ -96,6 +93,7 @@ if (get_post_meta($post->ID,'include_tracking_code',true)=='yes')
   }
 setupUtmParamForm();
 </script>
+</div><!-- #primary -->
 <?php    
 } // end mailchimp tracking code
 get_footer();

@@ -1,8 +1,35 @@
 /*-----------FRONT PAGE-------------------*/
 
+.page-template-front-page-landing-page {
+    .landing-page1{    
+        .primary-band{
+            h2{
+                color:#fff;
+                @include font-size(23);
+                color:#C6DCE0;
+            }
+        }
+        .light{
+            h1{
+            @include font-size(43); 
+            }
+            h4{
+            @include font-size(20);  
+            line-height:1.2;
+            }    
+        }
+    }
+}
+
+
+
+
+/*-----------~MANY OF THESE STYLES NOW REDUNDANT-------------------*/
+
 .frontpage-widget {
 padding:0px;
-box-shadow:0px 1px 0px 0px rgba(150, 150, 150, 0.35), 0px 2px 0px 0px #fff;
+background: #fff;
+box-shadow:0px 0px 0px 0px;
 border-radius:0px;
 padding-top: 12px;
 color: #333;
@@ -39,7 +66,7 @@ margin-bottom:0px;
 }
 
 .frontpage-widget:last-child {
-box-shadow:none;
+//box-shadow:none;
 }
 
 .front-page {
