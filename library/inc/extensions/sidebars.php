@@ -61,12 +61,15 @@ function reactor_register_sidebars() {
 
 
 	if ( in_array( 'front-primary', $sidebars[0] ) ) {
+        $front1  = '<div id="%1$s" class="widget frontpage-widget ';
+		$front1 .= 'large-' . reactor_get_widget_columns('sidebar-frontpage');
+		$front1 .= ' columns %2$s">';
 		register_sidebar( array(
 			'name'          => __('Front Page Primary', 'reactor'),
 			'id'            => 'sidebar-frontpage',
 			'description'   => 'Primary sidebar for the front page template',
 			'class'         => '',
-			'before_widget' => '<div id="%1$s" class="widget frontpage-widget %2$s">',
+			'before_widget' => $front1,
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
