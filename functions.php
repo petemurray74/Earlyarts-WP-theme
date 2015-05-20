@@ -136,6 +136,7 @@ add_filter( 'login_headertitle', 'custom_login_title' );
 
 
 //show tertiary sidebar beneath home content but not on all pages
+/*
 function earlyarts_front_widget()
 {
 if (is_front_page() && is_active_sidebar('sidebar-frontpage-3') )
@@ -144,7 +145,7 @@ if (is_front_page() && is_active_sidebar('sidebar-frontpage-3') )
 	}
 }
 add_action('reactor_inner_content_after', 'earlyarts_front_widget');
-
+*/
 
 //adds a shortcode to hide content from non-members
 add_shortcode( 'ea-member', 'member_check_shortcode' );
