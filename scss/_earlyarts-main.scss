@@ -278,6 +278,7 @@ margin-bottom: 0px;
 display:none;
 }
 
+/*
 .testimonial p:before {
 content: "\201C";
 font-size: 50px;
@@ -293,9 +294,34 @@ font-size: 50px;
 position: absolute;
 line-height: 1;
 }
+*/
 
-.testimonial p {
-font-style: italic;
+.testimonial {
+
+    p {
+    font-style: italic;
+    }
+    p:last-child{
+        margin-bottom:0;
+    }
+    blockquote{
+        margin:0;
+        padding:0;
+        border:0;
+    }
+    .quote_start{
+    @include font-size(50);
+    height: 0.5em;
+    font-weight: bold;
+    }
+    .quote_end{
+    @include font-size(50);
+    text-align: right;
+    margin-top: -0.1em;
+    font-weight: bold;
+    }
+    
+
 }
 
 .RHS-advert1{

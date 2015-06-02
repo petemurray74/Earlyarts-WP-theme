@@ -23,8 +23,18 @@
 	</div>
 	<div class="large-4 small-12 columns">
 	<h3>What people say</h3>
-		
-		<?php echo do_shortcode("[catlist name=testimonials template=testimonials  content=yes numberposts=1 orderby=rand posttype=post]"); ?>
+	
+    <?php 
+$args=array('post_type'=>'testimonials', 'orderby'=>'rand', 'posts_per_page'=>'1');
+$testimonials=new WP_Query($args); 
+
+while ($testimonials->have_posts()) : $testimonials->the_post(); ?>
+                <div class="lcp_article">
+                <p class="lcp_post_title_no_space"><?php the_title(); ?></p>
+                    <div class="testimonial"><div class="quote_start">&#8220;</div><?php the_content();?><div class="quote_end">&#8221;</div>
+                    </div>
+                </div>
+ <?php endwhile; wp_reset_postdata(); ?>    
 		
 	</div>
 </div>
