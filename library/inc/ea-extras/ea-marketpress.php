@@ -236,3 +236,65 @@ function BuyBoxSetNow() {
 }
 add_shortcode('buyboxset','BuyBoxSetNow');
 
+
+// adding ecommerce data to payment confirmed page, in a format to work with Google Tag Manager
+// from https://premium.wpmudev.org/forums/topic/marketpress-and-google-tag-manager#post-887957
+// add script only on final checkout page
+
+add_action('wp_head', 'display_google_tag_manager_code',10);
+function display_google_tag_manager_code()
+{
+    global $wp_query;
+    //check is the page the final confirmation step 
+    if (!$wp_query->query_vars['checkoutstep'] == 'confirmation') {
+        return;
+    }
+
+    //order still on session
+    if (!isset($_SESSION['mp_order']) || empty($_SESSION['mp_order'])) {
+        return;
+    }
+
+    global $mp;
+    $order_id = $_SESSION['mp_order'];
+    $order = $mp->get_order($order_id);
+    if (!is_object($order)) {
+        return ;
+    }
+
+    //javascript process code here
+
+	$js = '    
+	<!-- Google Tag Manager --> 
+	<script>
+	dataLayer=[{
+			"transactionId": "'.esc_attr($order->post_title).'",	// Transaction ID. PETE. Required.
+			"transactionAffiliation": "'.esc_attr(get_bloginfo('blogname')).'",	// Affiliation or store name.
+			"transactionTotal": '.$order->mp_order_total.',	// Grand Total.
+			"transactionShipping": "'.$order->mp_shipping_total.'",	// Shipping.
+			"transactionTax": "'.$order->mp_tax_total.'",	// Tax.
+		';
+	//loop the items
+	if (is_array($order->mp_cart_info) && count($order->mp_cart_info)) {
+	$js .= '"transactionProducts": [';
+		foreach ($order->mp_cart_info as $product_id => $variations) {
+			foreach ($variations as $variation => $data) {
+				$sku = !empty($data['SKU']) ? esc_attr($data['SKU']) : $product_id;
+				$js .= '{
+								 "id": "'.esc_attr($order->post_title).'", // Transaction ID. Required.
+								 "name": "'.esc_attr($data['name']).'",	// Product name. Required.
+								 "sku": "'.$sku.'",	// SKU/code.
+								 "category": "",	// Category or variation.
+								 "price": '.$data['price'].',	// Unit price.
+								 "quantity": '.$data['quantity'].'	// Quantity.
+							},';
+			}
+		}
+	$js=rtrim($js, ",")	;
+	$js .= ']}];';	
+	$js .='
+	</script>
+	<!-- End Google Tag Manager -->';
+	echo ($js);
+}
+}
