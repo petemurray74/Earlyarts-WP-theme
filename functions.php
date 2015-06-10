@@ -438,3 +438,9 @@ function add_mp_custom_fields($args) {
      $args['supports'] = array( 'title', 'editor', 'author', 'excerpt', 'revisions', 'thumbnail', 'custom-fields' );
      return $args;
 }
+
+// set an arbitary Javascript variable to be read by google tag manager
+function pageview_identifier() {
+if (in_category('blog')) {echo('<script>GAcontentGroup="blog"</script>');}
+	}
+add_action('wp_footer','pageview_identifier');

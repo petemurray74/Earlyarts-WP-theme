@@ -49,10 +49,5 @@
         <?php reactor_content_after(); ?>
         
 	</div><!-- #primary -->
-
+	
 <?php get_footer(); ?>
-
-<? 
-// set an arbitary Javascript variable to be read by google tag manager
-if (in_category('blog')) {?><script>GAcontentGroup="blog"</script><?php;}
-?>
