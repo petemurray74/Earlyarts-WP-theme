@@ -21,13 +21,14 @@
                 <?php reactor_inner_content_before(); ?>
                 
 				<?php if ( have_posts() ) : ?>
-                    <header class="archive-header">                   
-        
-                    <?php // show category description if there is one, else the title 
-					if ( category_description() ) : ?>
-						<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1><?php echo wpautop(category_description()) ?>
-					<?php else:?>
-						<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>'); ?></h1>
+                    <header class="archive-header">
+                   
+<h1 class="archive-title"><?php printf( __('%s', 'reactor'), '<span>' . single_cat_title( '', false ) . '</span>');                                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+                    echo (' - page '.$paged);
+?></h1>
+					 <?php // show category description if there is one, else the title 
+                        if ( category_description() ) : ?>
+						<?php echo wpautop(category_description()) ?>
                     <?php endif; ?>
                     </header><!-- .archive-header -->
                 <?php endif; // end have_posts() check ?> 
