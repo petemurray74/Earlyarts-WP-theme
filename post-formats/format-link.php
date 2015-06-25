@@ -17,13 +17,13 @@
             
             <div class="entry-content">
                 
-				<div>
+				<div class="post-format-link-title">
                     <a href="<?php //we are using excerpt to hold the URL
 					echo(strip_tags(get_the_excerpt()));
 					?>" target="_new"><?php the_title(); ?></a> 
                 </div>
 				
-				<div>
+				<div class="post-format-link-txt">
                     <?php the_content(); ?>
                 </div>
                 			

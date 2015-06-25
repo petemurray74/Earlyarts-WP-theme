@@ -72,10 +72,10 @@ it stopped the menu toggle working
  */
  
 dl,dt,dd,ul,ol,li,pre,form,p,blockquote,th,td,label{
-font-size: 14px;
-font-size: 0.875rem;
-line-height:20px;
-line-height:1.25rem;
+font-size: 16px;
+font-size: 1rem;
+line-height:25px;
+line-height:1.5625rem;
 color:#555;
 }
 
@@ -673,9 +673,14 @@ margin-top: 25px;
 
 /*--for link post formats--*/
 .post.format-link p {
-line-height: 1.3;
+line-height: 1.2;
 }
 
+.post-format-link-title {
+font-size:18px;
+font-size:1.125rem;
+margin-bottom:0.2em;
+}
 
 /*--------EVENTS ------*/
 
