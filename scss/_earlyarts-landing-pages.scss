@@ -1,5 +1,22 @@
+.page-template-page-templateslanding-page-php {    
+    .main-top-bar-wrapper{
+            border-top:0;
+        } 
+}
+
 
 .landing-page1 {
+    
+    space-half {
+        margin-bottom: 0.5em;
+    }
+    space-1 {
+        margin-bottom: 1em;
+    }
+    space-2 {
+        margin-bottom: 1em;
+    }
+    
 	#page .site-content {
 	padding-bottom:0 !important
 	}
@@ -20,7 +37,7 @@
 	font-size:30px;font-weight:bold;margin-bottom:0
 	}
 	h3 {
-	font-size:24px;font-weight:normal;margin-bottom:0;color:#eee;
+	font-size:24px;font-weight:normal;margin-bottom:0;color:#eee;letter-spacing: -0.04em;
 	}
 	h4 {
 	font-size:16px;line-height: 1.6;
@@ -52,7 +69,7 @@
 		color: #00879b; 
 		margin-bottom:0;
 		letter-spacing:-2px;
-		text-shadow:0 0 0;
+		text-shadow: 0px 0px 2px rgba(0, 0, 2, 0.1);
 		}
 		sup {
 			a
@@ -86,6 +103,9 @@
 		h4{
 		color:#eee;
 		}
+        h2{
+        color:#C6DCE0;
+        }
 		sup {
 			a
 			{color:#eee;}
