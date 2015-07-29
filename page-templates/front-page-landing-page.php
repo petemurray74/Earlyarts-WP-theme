@@ -22,7 +22,7 @@
 					
 					<article id="post-<?php echo $page_id; ?>" class="<?php echo $class; ?>">   
 																
-						<div class="entry-content"><h1>WAZZ</h1>
+						<div class="entry-content">
 							<?php the_content(); ?>
 						</div>
 					</article><!-- #post -->
