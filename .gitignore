@@ -215,12 +215,6 @@ pip-log.txt
 .mr.developer.cfg
 
 #PETE
-/images
-*.png
-*.jpg
 *.scssc
-images/hero_internal.jpg
-images/hero_internal.jpg
 compass_app_log.txt
 *.cfg
-scss/new product layout sass - wrong versions here for ref only.7z
