@@ -7,13 +7,13 @@
 
 .landing-page1 {
     
-    space-half {
+    .space-half {
         margin-bottom: 0.5em;
     }
-    space-1 {
+    .space-1 {
         margin-bottom: 1em;
     }
-    space-2 {
+    .space-2 {
         margin-bottom: 1em;
     }
     
@@ -93,7 +93,10 @@
 			a
 			{color:#eee;}
 			}
-	}
+	.content-area li {
+    background: url(http://dm16174grt2cj.cloudfront.net/landing-page/icons/tick-done_767676.png) no-repeat 0px -2px;
+    }
+    }
 	.primary-band{
 	background-color: #00879B !important;
 	border-bottom: 7px solid #5FAFBB !important;
@@ -177,7 +180,7 @@
     margin-left:0;
     }
     .content-area li {
-    background: url(/wp-content/themes/earlyarts/images/tick-done.png) no-repeat 0px -2px;
+    background: url(http://dm16174grt2cj.cloudfront.net/landing-page/icons/tick-done_eeeeee.png) no-repeat 0px -2px;
     list-style-type: none;
     text-indent: 30px;
     margin-bottom:10px;
