@@ -28,7 +28,7 @@
 
                             <div class="entry-content">
                                 <?php the_content(); ?>
-                                <?php mp_show_cart('checkout'); ?>
+                                <?php //MPUPGRADE mp_show_cart('checkout'); ?>
                             </div><!-- .entry-content -->
 
                             <footer class="entry-footer">
