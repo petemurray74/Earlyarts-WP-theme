@@ -140,20 +140,63 @@ function ea_mp_products_html_grid($post_array = array()) {
 // Function to apply discounts to members
 // ref:http://premium.wpmudev.org/forums/topic/how-do-i-offer-separating-pricing-for-premium-members-using-marketpress
 
-function mp_membership_price_discount( $price ){
+// OLD membership 2.9 version
+//function mp_membership_price_discount( $price ){
 	// check for existence of Membership plugin
-	if ( class_exists( 'M_Membership' ) ) {
+//	if ( class_exists( 'M_Membership' ) ) {
 		// check if user is logged in
-		if ( is_user_logged_in() ){	
+//		if ( is_user_logged_in() ){	
 		// take 10% discount for users on access level with id=5
-			if ( current_user_on_level(5) ) {
-				return $price * 0.9;
-			}
-		}
+//			if ( current_user_on_level(5) ) {
+//				return $price * 0.9;
+//			}
+//		}
+//	}
+//	return $price;
+//}
+// add_filter( 'mp_product_price', 'mp_membership_price_discount' );
+
+//------------------------------------------------
+// Members discount code for membership 2 pro from WPMU
+//function mp_membership_price_discount( $price ){
+    // check for existence of Membership plugin
+//    if ( apply_filters( 'ms_active', false ) ) {
+	// check if user is logged in
+//        if ( is_user_logged_in() ){
+            // take 10% discount for users on access level with id=7675 (annual membership)
+//           $api = ms_api();
+//          $membership = $api->detect_membership();
+//           $membership_id = $api->get_membership_id( $membership->name );
+//           if($membership_id == 7675) {
+//		return $price * 0.9;
+//          }
+//	}
+//    }
+
+//    return $price;
+//}
+
+//add_filter( 'mp_product_price', 'mp_membership_price_discount' );
+//add_filter( 'the_content', 'mp_membership_price_discount' );
+//------------------------------------------------
+
+
+// GIVE 10% discount to members
+function ea_members_discount($price) {
+// check if they are a member (can add more membership ids separated by commas  
+// if you want to check whether they are a member of any of a few plans)
+  if ( ms_has_membership(7675) )  {
+	$price['lowest'] = $price['lowest']*0.9;
+	//if there is a sale on, discount that also
+	if ($price['sale']['amount']) 
+	{
+	$price['sale']['amount'] = $price['sale']['amount']*0.9;
 	}
-	return $price;
+  }
+return $price;
 }
-add_filter( 'mp_product_price', 'mp_membership_price_discount' );
+add_filter( 'mp_product/get_price', 'ea_members_discount' , 10, 2 );
+
 
 // shortcode to add an 'add to cart' button to a page
 
