@@ -278,15 +278,33 @@ function ea_main_menu_header()
     <?php
     } 
 
-/*--add image to each page between menu and content area ----*/
-
+/*--add random image to each page between menu and content area ----*/
 function earlyarts_hero_image () {
 ?>
 <div class="hero">
 	<div class="row">
 		<div class="<?php reactor_columns( 12 ); ?> header-hero">
-			<img src="http://dm16174grt2cj.cloudfront.net/hero.jpg" width="988" height="190">
-			<!-- https://farm6.staticflickr.com/5543/14061349481_4528622be9_o.jpg -->
+		<?php
+		$x = mt_rand(1,4);
+		
+		switch ($x) {
+			case 1:
+				$img="hero_1.jpg";
+				break;
+			case 2:
+				$img="hero_5.jpg";
+				break;
+			case 3:
+				$img="hero_6.jpg";
+				break;
+			case 4:
+				$img="hero_13.jpg";
+				break;
+			default:
+				$img="hero_1.jpg";
+			}
+		?>
+			<img src="http://dm16174grt2cj.cloudfront.net/<?php echo($img); ?>" width="960" height="185" alt="Earlyarts">
 		</div>	
 	</div>
 </div>
@@ -439,8 +457,17 @@ function add_mp_custom_fields($args) {
      return $args;
 }
 
-// set an arbitary Javascript variable to be read by google tag manager
+// set an arbitrary Javascript variable to be read by google tag manager
 function pageview_identifier() {
 if (in_category('blog')) {echo('<script>GAcontentGroup="blog"</script>');}
 	}
 add_action('wp_footer','pageview_identifier');
+
+// change the message which appears when a not logged in user clicks "yes I'm attending" on an events page
+function ea_events_login_message ($message){
+	if (isset($_REQUEST['eab']) && $_REQUEST['eab'] == 'y') {
+			$message = '<p class="message">Excellent! First we need you to login or register to get you marked as coming!</p>';
+		}
+return $message;
+}
+add_filter('login_message','ea_events_login_message');
