@@ -156,36 +156,12 @@ function ea_mp_products_html_grid($post_array = array()) {
 //}
 // add_filter( 'mp_product_price', 'mp_membership_price_discount' );
 
-//------------------------------------------------
-// Members discount code for membership 2 pro from WPMU
-//function mp_membership_price_discount( $price ){
-    // check for existence of Membership plugin
-//    if ( apply_filters( 'ms_active', false ) ) {
-	// check if user is logged in
-//        if ( is_user_logged_in() ){
-            // take 10% discount for users on access level with id=7675 (annual membership)
-//           $api = ms_api();
-//          $membership = $api->detect_membership();
-//           $membership_id = $api->get_membership_id( $membership->name );
-//           if($membership_id == 7675) {
-//		return $price * 0.9;
-//          }
-//	}
-//    }
-
-//    return $price;
-//}
-
-//add_filter( 'mp_product_price', 'mp_membership_price_discount' );
-//add_filter( 'the_content', 'mp_membership_price_discount' );
-//------------------------------------------------
-
 
 // GIVE 10% discount to members
 function ea_members_discount($price) {
-// check if they are a member (can add more membership ids separated by commas  
-// if you want to check whether they are a member of any of a few plans)
-  if ( ms_has_membership(7675) )  {
+// check if they are a member (can add more membership ids separated by commas  if you want to check whether they are a member of any of a few plans)
+// function_exists('ms_has_membership') check to see if the plugin exists
+if ( function_exists('ms_has_membership') && ms_has_membership(7675) ) {
 	$price['lowest'] = $price['lowest']*0.9;
 	//if there is a sale on, discount that also
 	if ($price['sale']['amount']) 
@@ -195,7 +171,16 @@ function ea_members_discount($price) {
   }
 return $price;
 }
-add_filter( 'mp_product/get_price', 'ea_members_discount' , 10, 2 );
+//add_filter( 'mp_product/get_price', 'ea_members_discount' , 10, 2 );
+
+//Marketpress v3
+//add text on confirmation page
+function ea_order_confirmation_msg($content){
+$content = "Thanks for your order line #203 of ea-marketpress";
+return $content;
+}
+add_filter ('mp_order/confirmation_text/manual_payments','ea_order_confirmation_msg',2);
+
 
 
 // shortcode to add an 'add to cart' button to a page
@@ -214,8 +199,9 @@ function PrintVersionBox($params) {
 			<div class="column large-6 small-12">
 			<span class="preprice">'.$textlabel.':<br></span>'.do_shortcode("[mp_product_price product_id=\"$productid\" label=\"\"]").'
 			</div>
-			<div class="column large-6 small-12">
-			<form class="mp_buy_form" method="post" action="/store/shopping-cart/" style="display: block;"><input type="hidden" name="product_id" value="'.$productid.'"><input type="hidden" name="variation" value="0"><input type="hidden" name="action" value="mp-update-cart"><input class="mp_button_addcart" type="submit" name="addcart" value="Add To Cart »"></form>                                
+			<div class="column large-6 small-12">'.
+			do_shortcode("[mp_buy_button product_id=\"$productid\" context=\"single\"]")
+			.'                               
 			</div>
 		</div>
 	</div>
@@ -341,3 +327,9 @@ function display_google_tag_manager_code()
 	echo ($js);
 }
 }
+// TESTING FILTERS
+//function ea_test_cart ($classes) {
+//$classes = "ea_test";
+//return $classes;
+//}
+//add_filter( 'mp_cart/cart_classes', 'ea_test_cart' , 10 );
