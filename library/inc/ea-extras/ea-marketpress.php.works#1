@@ -132,6 +132,29 @@ function ea_mp_products_html_grid($post_array = array()) {
 
     return $html;
 }
+// BUY BUTTON removed
+// <div class="ea_mp_buy"><span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span></div>
+
+
+//
+// Function to apply discounts to members
+// ref:http://premium.wpmudev.org/forums/topic/how-do-i-offer-separating-pricing-for-premium-members-using-marketpress
+
+// OLD membership 2.9 version
+//function mp_membership_price_discount( $price ){
+	// check for existence of Membership plugin
+//	if ( class_exists( 'M_Membership' ) ) {
+		// check if user is logged in
+//		if ( is_user_logged_in() ){	
+		// take 10% discount for users on access level with id=5
+//			if ( current_user_on_level(5) ) {
+//				return $price * 0.9;
+//			}
+//		}
+//	}
+//	return $price;
+//}
+// add_filter( 'mp_product_price', 'mp_membership_price_discount' );
 
 
 // GIVE 10% discount to members
@@ -157,6 +180,7 @@ $content = "Thanks for your order line #203 of ea-marketpress";
 return $content;
 }
 add_filter ('mp_order/confirmation_text/manual_payments','ea_order_confirmation_msg',2);
+
 
 
 // shortcode to add an 'add to cart' button to a page
@@ -247,6 +271,7 @@ add_shortcode('buyboxset','BuyBoxSetNow');
 
 add_action( 'wp_head', 'display_google_tag_manager_code' );
 function display_google_tag_manager_code() {
+
 	if ( get_query_var( 'mp_order_id', 0 ) == 0 ) {
 		return;
 	}
@@ -258,42 +283,36 @@ function display_google_tag_manager_code() {
 	}
 	$cart = $order->get_cart();
 	//javascript process code here
-	if ( is_array( $cart->get_items() ) && count( $cart->get_items() ) ) {
-		?>
+	$js = '
 	<!-- Google Tag Manager  Ecommerce -->
 	<script>
 	dataLayer=[{
-		"transactionId": "<?php echo(esc_attr( $order->post_title )); ?>",	// Transaction ID Required.
-		"transactionAffiliation": "<?php echo(esc_attr( get_bloginfo( 'blogname' ) )); ?>",	// Affiliation or store name.
-		"transactionTotal": <?php echo($cart->total()); ?>,	// Grand Total.
-		"transactionShipping": "<?php echo($cart->shipping_total()); ?>",	// Shipping.
-		"transactionTax": <?php echo($cart->tax_total()); ?>,	// Tax.
-		"transactionProducts": [
-		<?php
-			//loop the items
-			$counter=0;
+			"transactionId": "' . esc_attr( $order->post_title ) . '",	// Transaction ID. PETE. Required.
+			"transactionAffiliation": "' . esc_attr( get_bloginfo( 'blogname' ) ) . '",	// Affiliation or store name.
+			"transactionTotal": ' . $cart->total() . ',	// Grand Total.
+			"transactionShipping": "' . $cart->shipping_total() . '",	// Shipping.
+			"transactionTax": "' . $cart->tax_total() . '",	// Tax.
+		';
+	//loop the items
+	if ( is_array( $cart->get_items() ) && count( $cart->get_items() ) ) {
+		$js .= '"transactionProducts": [';
 		foreach ( $cart->get_items_as_objects() as $product ) {
 			$sku = $product->get_meta( 'sku', $product->ID );
-			?> {
-								 "id": "<?php echo(esc_attr( $order->post_title )) ; ?>", // Transaction ID. Required.
-								 "name": "<?php echo(esc_attr( $product->post_title )) ; ?>",	// Product name. Required.
-								 "sku": "<?php echo($sku) ?>",	// SKU/code.
-								 "price": <?php echo($product->get_price( 'lowest' )) ; ?>,	// Unit price.
-								 "quantity": <?php echo($product->qty) ; ?>	// Quantity.
-							}
-		<?php
-		$counter ++;
-		if ($counter != count( $cart->get_items() )) {
-			// add a comma
-			?>
-			,
-			<?php
-			}
+			$js .= '{
+								 "id": "' . esc_attr( $order->post_title ) . '", // Transaction ID. Required.
+								 "name": "' . esc_attr( $product->post_title ) . '",	// Product name. Required.
+								 "sku": "' . $sku . '",	// SKU/code.
+								 "category": "",	// Category or variation.
+								 "price": ' . $product->get_price( 'lowest' ) . ',	// Unit price.
+								 "quantity": ' . $product->qty . '	// Quantity.
+							},';
 		}
-		?> ]}];
+		$js = rtrim( $js, "," );
+		$js .= ']}];';
+		$js .= '
 	</script>
-	<!-- End Google Tag Manager Ecommerce -->
-	<?php
+	<!-- End Google Tag Manager Ecommerce -->';
 	}
+	echo ($js);
 }
 
