@@ -289,22 +289,22 @@ function earlyarts_hero_image () {
 		
 		switch ($x) {
 			case 1:
-				$img="hero_1.jpg";
+				$img="hero_1a.jpg";
 				break;
 			case 2:
-				$img="hero_5.jpg";
+				$img="hero_5a.jpg";
 				break;
 			case 3:
-				$img="hero_6.jpg";
+				$img="hero_6a.jpg";
 				break;
 			case 4:
-				$img="hero_13.jpg";
+				$img="hero_13a.jpg";
 				break;
 			default:
-				$img="hero_1.jpg";
+				$img="hero_1a.jpg";
 			}
 		?>
-			<img src="http://dm16174grt2cj.cloudfront.net/<?php echo($img); ?>" width="960" height="185" alt="Earlyarts">
+			<img src="http://dm16174grt2cj.cloudfront.net/hero_images/<?php echo($img); ?>" width="960" height="185" alt="Earlyarts">
 		</div>	
 	</div>
 </div>
