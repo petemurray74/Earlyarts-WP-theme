@@ -430,7 +430,7 @@ if (is_page('cookie-clear'))
 require_once ('library/inc/ea-extras/ea-marketpress.php');
 
 // removes ref to marketpress styles
-add_theme_support( 'mp_style' );
+//add_theme_support( 'mp_style' );
 
 // User Meta Pro filters to encode characters when doing form based redirects (otherwise '?' get encoded )
 add_filter( 'user_meta_wp_hook', 'enableRegistrationRedirect', 10, 2 );
