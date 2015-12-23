@@ -69,12 +69,12 @@ li.head strong{text-transform:uppercase}
 								<ul><li class="head"><strong>EYFS Teaching Packs</strong>						
 								<ul>
                                     <li><a href="http://earlyarts.co.uk/whats-special/">What’s special about the packs?</a></li>
-                                    <li><a href="/store/products">All our packs</a></li>
-                                    <li><a href="http://earlyarts.co.uk/store/products/category/crafts-construction-modelling/">Crafts, Construction and Modelling</a></li>
-                                    <li><a href="http://earlyarts.co.uk/store/products/category/drawing-writing-and-mark-making/">Drawing, Writing and Mark Making</a></li>
-                                    <li><a href="http://earlyarts.co.uk/store/products/category/movement-and-dance/">Movement and Dance</a></li>
-                                    <li><a href="http://earlyarts.co.uk/store/products/category/ict-photography-and-video/">ICT, Photography and Video</a></li>
-                                    <li><a href="http://earlyarts.co.uk/store/products/category/puppets-story-building-and-role-play/">Puppets, Story Building and Role Play</a></li>
+                                    <li><a href="/products">All our packs</a></li>
+                                    <li><a href="http://earlyarts.co.uk/products/category/crafts-construction-modelling/">Crafts, Construction and Modelling</a></li>
+                                    <li><a href="http://earlyarts.co.uk/products/category/drawing-writing-and-mark-making/">Drawing, Writing and Mark Making</a></li>
+                                    <li><a href="http://earlyarts.co.uk/products/category/movement-and-dance/">Movement and Dance</a></li>
+                                    <li><a href="http://earlyarts.co.uk/products/category/ict-photography-and-video/">ICT, Photography and Video</a></li>
+                                    <li><a href="http://earlyarts.co.uk/products/category/puppets-story-building-and-role-play/">Puppets, Story Building and Role Play</a></li>
 								</ul>
 								</li>
 								<li class="head"><strong>Research &#038; Evidence</strong>
@@ -89,15 +89,11 @@ li.head strong{text-transform:uppercase}
 									<li><a href="http://earlyarts.co.uk/research-and-evidence/international-pedagogies/">International Pedagogies</a></li>
 								</ul>
 								</li>
-								<li class="head"><strong>Events</strong>
+								<li class="head"><strong>Training</strong>
 								<ul class="sub-menu dropdown">
 									<li><a href="http://earlyarts.co.uk/our-events/9-benefits-creative-training/">Nine Benefits of Creative Training</a></li>
 									<li><a href="/events">Upcoming Events</a></li>
-									<li><a href="http://earlyarts.co.uk/our-events/shared-practice-networks/">Shared Practice Networks</a></li>
-									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2008/">Earlyarts UnConference 2008</a></li>
-									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2010/">Earlyarts UnConference 2010</a></li>
-									<li><a href="http://earlyarts.co.uk/our-events/earlyarts-unconference-2012/">Earlyarts UnConference 2012</a></li>
-									<li><a href="http://earlyarts.co.uk/our-events/national-strategic-round-table/">National Strategic Round Table</a></li>
+									<li><a href="http://earlyarts.co.uk/the-power-of-play/">The Power of Play</a></li>
 								</ul>
 								</li>
 								<li class="head"><strong>Our Philosophy</strong>
