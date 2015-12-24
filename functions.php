@@ -98,8 +98,8 @@ if (!is_admin())add_filter('widget_text', 'do_shortcode', 11);
 
 
 // write firstname/last name in to db after registering through Membership signup form
-function M_AddNameProcess($error,$user_id) {	update_user_meta($user_id, 'first_name', esc_attr($_POST['first_name']));	update_user_meta($user_id, 'last_name', esc_attr($_POST['last_name']));	}	
-add_action( 'membership_subscription_form_registration_process', 'M_AddNameProcess',10,2);
+//function M_AddNameProcess($error,$user_id) {	update_user_meta($user_id, 'first_name', esc_attr($_POST['first_name']));	update_user_meta($user_id, 'last_name', esc_attr($_POST['last_name']));	}	
+//add_action( 'membership_subscription_form_registration_process', 'M_AddNameProcess',10,2);
 
 
 // remove admin bar
@@ -147,22 +147,6 @@ if (is_front_page() && is_active_sidebar('sidebar-frontpage-3') )
 add_action('reactor_inner_content_after', 'earlyarts_front_widget');
 */
 
-//adds a shortcode to hide content from non-members
-add_shortcode( 'ea-member', 'member_check_shortcode' );
-function member_check_shortcode( $atts, $content = null ) {
-	 if ( is_user_logged_in() && !is_null( $content ) && !is_feed() )
-		return do_shortcode($content);
-	return '';
-}
-
-//adds a shortcode to show content only to non-members
-add_shortcode( 'ea-visitor', 'visitor_check_shortcode' );
-function visitor_check_shortcode( $atts, $content = null ) {
-	 if ( ( !is_user_logged_in() && !is_null( $content ) ) || is_feed() )
-		return do_shortcode($content);
-	return '';
-}
-
 //adds logout shortcode
 add_shortcode( 'logout', 'logout_shortcode' );
 function logout_shortcode() {
@@ -170,23 +154,6 @@ function logout_shortcode() {
 	return '<a href="'.$x.'">Logout</a>';
 	}
 	
-//adds admin shortcode to admin users
-add_shortcode( 'admin', 'admin_check_shortcode' );
-function admin_check_shortcode( $atts, $content = null ) {
-	 if ( ( current_user_can( 'edit_posts' ) && !is_null( $content ) ) || is_feed() )
-		return do_shortcode($content);
-	return '';
-}
-
-//change UserMetaPro system messages
-// not used $msgs['registration_completed']  = __( 'You\'ve successfully registered with Earlyarts.<br><br>If you\'d like to join, please continue to <a href="/choose-a-subscription">membership options</a>', $userMeta->name );    
-add_filter( 'user_meta_messages', 'earlyarts_user_meta_msg' );
-function earlyarts_user_meta_msg ($msgs) {
-
-$msgs['profile_updated']           = __( 'Information submitted, thank you.', $userMeta->name );
-
-return $msgs;
-}
 
 // Anti-spam email links
 // Use shortcode [email address"email@me.com"]My name[/email]
@@ -278,15 +245,33 @@ function ea_main_menu_header()
     <?php
     } 
 
-/*--add image to each page between menu and content area ----*/
-
+/*--add random image to each page between menu and content area ----*/
 function earlyarts_hero_image () {
 ?>
 <div class="hero">
 	<div class="row">
 		<div class="<?php reactor_columns( 12 ); ?> header-hero">
-			<img src="http://dm16174grt2cj.cloudfront.net/hero.jpg" width="988" height="190">
-			<!-- https://farm6.staticflickr.com/5543/14061349481_4528622be9_o.jpg -->
+		<?php
+		$x = mt_rand(1,4);
+		
+		switch ($x) {
+			case 1:
+				$img="hero_1a.jpg";
+				break;
+			case 2:
+				$img="hero_5a.jpg";
+				break;
+			case 3:
+				$img="hero_6a.jpg";
+				break;
+			case 4:
+				$img="hero_13a.jpg";
+				break;
+			default:
+				$img="hero_1a.jpg";
+			}
+		?>
+			<img src="http://dm16174grt2cj.cloudfront.net/hero_images/<?php echo($img); ?>" width="960" height="185" alt="Earlyarts">
 		</div>	
 	</div>
 </div>
@@ -412,16 +397,8 @@ if (is_page('cookie-clear'))
 require_once ('library/inc/ea-extras/ea-marketpress.php');
 
 // removes ref to marketpress styles
-add_theme_support( 'mp_style' );
+//add_theme_support( 'mp_style' );
 
-// User Meta Pro filters to encode characters when doing form based redirects (otherwise '?' get encoded )
-add_filter( 'user_meta_wp_hook', 'enableRegistrationRedirect', 10, 2 );
-function enableRegistrationRedirect( $enable, $hookName ) {
-    if ( 'registration_redirect' == $hookName )
-        $enable = true;
-
-    return $enable;
-}
 
 add_filter( 'registration_redirect', 'urlHtmlDecode' );
 function urlHtmlDecode( $redirect_to ) {
@@ -439,8 +416,27 @@ function add_mp_custom_fields($args) {
      return $args;
 }
 
-// set an arbitary Javascript variable to be read by google tag manager
+// set an arbitrary Javascript variable to be read by google tag manager
 function pageview_identifier() {
 if (in_category('blog')) {echo('<script>GAcontentGroup="blog"</script>');}
 	}
 add_action('wp_footer','pageview_identifier');
+
+// change the message which appears when a not logged in user clicks "yes I'm attending" on an events page
+function ea_events_login_message ($message){
+	if (isset($_REQUEST['eab']) && $_REQUEST['eab'] == 'y') {
+			$message = '<p class="message">Excellent! First we need you to login or register to get you marked as coming!</p>';
+		}
+return $message;
+}
+add_filter('login_message','ea_events_login_message');
+
+// added after upgrade to MarketPress v3 caused strange URL redirections from - for example
+// products/using-clay-worlds/ TO products/using-clay-worlds-print/ 
+add_action('wp', 'wpmu_remove_wp_old_slug_redirect', PHP_INT_MAX);
+function wpmu_remove_wp_old_slug_redirect()
+{
+    remove_action( 'template_redirect',  'wp_old_slug_redirect' );
+}
+
+ 

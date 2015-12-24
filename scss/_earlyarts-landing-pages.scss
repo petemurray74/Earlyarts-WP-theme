@@ -50,6 +50,12 @@
         font-size: 20px;
         background: rgba(204, 204, 204, 0.15);
         min-height: 3em;
+        a {
+            color:#eee;
+        }
+        a:hover{
+           color:#ccc; 
+        }
     }
 	.light{
 	background-color: #eee;

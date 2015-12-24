@@ -42,9 +42,13 @@ add_filter('wp_title', 'fix_title', 100);
 											
 									<div class="entry-content">
 										<?php 
+										$args['tag']='teaching-guides';
+										$args['paginate']=false;
+										$args['order_by']='rand';
+										mp_list_products($args);
 										// show only products tagged with 'teaching-guides'
 										//ea_mp_list_products(true,'','','','','','','teaching-guides'); 
-										ea_mp_list_products(true,'','','30','','','','teaching-guides'); 
+										//ea_mp_list_products(true,'','','30','','','','teaching-guides'); 
 										?>
                                         <div class="panel"><p><strong>More about <a href="/whats-special/">the packs and what makes them special</a></strong></p></div>
 									</div><!-- .entry-content -->

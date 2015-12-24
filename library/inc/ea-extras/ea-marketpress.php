@@ -1,108 +1,103 @@
 <?php
-function ea_mp_list_products($echo = true, $paginate = '', $page = '', $per_page = '', $order_by = '', $order = '', $category = '', $tag = '', $list_view = NULL) {
-		global $wp_query, $mp;
-		//setup taxonomy if applicable
-		if ($category) {
-			$taxonomy_query = '&product_category=' . sanitize_title($category);
-		} else if ($tag) {
-			$taxonomy_query = '&product_tag=' . sanitize_title($tag);
-		} else if (isset($wp_query->query_vars['taxonomy']) && ($wp_query->query_vars['taxonomy'] == 'product_category' || $wp_query->query_vars['taxonomy'] == 'product_tag')) {
-			//TODO might need to fix for tags that are a number
-			$taxonomy_query = '&' . $wp_query->query_vars['taxonomy'] . '=' . $wp_query->query_vars['term'];
+
+// overwriting the same function from template-functions.php
+// hacked to work for grid display only
+	function _mp_products_html( $view, $custom_query, $related_products = false ) {
+
+		$html = '<ul class="small-block-grid-2 large-block-grid-3">';
+
+
+//get image width
+		if ( mp_get_setting( 'list_img_size' ) == 'custom' ) {
+			$img_width = mp_get_setting( 'list_img_width' ) . 'px';
 		} else {
-			$taxonomy_query = '';
+			$size      = mp_get_setting( 'list_img_size' );
+			$img_width = get_option( $size . '_size_w' ) . 'px';
 		}
 
-		//setup pagination
-		$paged = false;
-		if ($paginate) {
-			$paged = true;
-		} else if ($paginate === '') {
-			if ($mp->get_setting('paginate'))
-				$paged = true;
-			else
-				$paginate_query = '&nopaging=true';
-		} else {
-			$paginate_query = '&nopaging=true';
-		}
+		while ( $custom_query->have_posts() ) : $custom_query->the_post();
+			$product = new MP_Product();
 
-		//get page details
-		if ($paged) {
-			//figure out perpage
-			if (intval($per_page)) {
-				$paginate_query = '&posts_per_page=' . intval($per_page);
-			} else {
-				$paginate_query = '&posts_per_page=' . $mp->get_setting('per_page');
+			$align = null;
+			if ( 'list' == mp_get_setting( 'list_view' ) ) {
+				$align = mp_get_setting( 'image_alignment_list' );
 			}
 
-			//figure out page
-			if (isset($wp_query->query_vars['paged']) && $wp_query->query_vars['paged'])
-				$paginate_query .= '&paged=' . intval($wp_query->query_vars['paged']);
+			$img = $product->image( false, 'list', null, $align, true );
 
-			if (intval($page))
-				$paginate_query .= '&paged=' . intval($page);
-			else if ($wp_query->query_vars['paged'])
-				$paginate_query .= '&paged=' . intval($wp_query->query_vars['paged']);
-		}
+			$excerpt = mp_get_setting( 'show_excerpts' ) ? '<div class="mp_product_excerpt"><p>' . $product->excerpt() . '</div></p><!-- end mp_product_excerpt -->' : '';
+			$mp_product_list_content = apply_filters( 'mp_product_list_content', $excerpt, $product->ID );
 
-		//get order by
-		if (!$order_by) {
-			if ($mp->get_setting('order_by') == 'price')
-				$order_by_query = '&meta_key=mp_price_sort&orderby=meta_value_num';
-			else if ($mp->get_setting('order_by') == 'sales')
-				$order_by_query = '&meta_key=mp_sales_count&orderby=meta_value_num';
-			else
-				$order_by_query = '&orderby=' . $mp->get_setting('order_by');
-		} else {
-			if ('price' == $order_by)
-				$order_by_query = '&meta_key=mp_price_sort&orderby=meta_value_num';
-			else if ('sales' == $order_by)
-				$order_by_query = '&meta_key=mp_sales_count&orderby=meta_value_num';
-			else
-				$order_by_query = '&orderby=' . $order_by;
-		}
+			$pinit   = $product->pinit_button( 'all_view' );
+			$fb      = $product->facebook_like_button( 'all_view' );
+			$twitter = $product->twitter_button( 'all_view' );
 
-		//get order direction
-		if (!$order) {
-			$order_query = '&order=' . $mp->get_setting('order');
-		} else {
-			$order_query = '&order=' . $order;
-		}
+			$class   = array();
+			$class[] = ( strlen( $img ) > 0 ) ? 'mp_thumbnail' : '';
+			$class[] = ( strlen( $excerpt ) > 0 ) ? 'mp_excerpt' : '';
+			$class[] = ( $product->has_variations() ) ? 'mp_price_variations' : '';
+			$class[] = ( $product->on_sale() ) ? 'mp_on_sale' : '';
 
-		//The Query
-		$custom_query = new WP_Query('post_type=product&post_status=publish' . $taxonomy_query . $paginate_query . $order_by_query . $order_query);
+			$class = array_filter( $class, create_function( '$s', 'return ( ! empty( $s ) );' ) );
 
-		//allows pagination links to work get_posts_nav_link()
-		if ($wp_query->max_num_pages == 0 || $taxonomy_query)
-			$wp_query->max_num_pages = $custom_query->max_num_pages;
+			$image_alignment = mp_get_setting( 'image_alignment_list' );
 
-		// get layout type for products
-		if (is_null($list_view)) {
-			$layout_type = $mp->get_setting('list_view');
-		} else {
-			$layout_type = $list_view ? 'list' : 'grid';
-		}
+			//$align_class = ( $view == 'list' ) ? ' mp_product-image-' . ( ! empty( $image_alignment ) ? $image_alignment : 'alignleft' ) : '';
 
-		$content = '<ul class="small-block-grid-2 large-block-grid-3">';
-		
-		if ($last = $custom_query->post_count) {
+			$html .= '
+				<li><div class="ea_mp_product_detail">
+					<div itemscope itemtype="http://schema.org/Product" class="mp_product' . ( ( strlen( $img ) > 0 ) ? ' mp_product-has-image' : '' ) . ' ' . implode( $class, ' ' ) . '">
+					
+						<div class="mp_product_images">
+							' . $img . '
+						</div><!-- end mp_product_images -->
+						
+						<div class="mp_product_details">
+ 
+							<div class="mp_product_meta">
+								<h3 class="ea_mp_product_name entry-title" itemprop="name">
+	 								<a href="' . $product->url( false ) . '">' . $product->title( false ) . '</a>
+	 							</h3>
+								' . $product->display_price( false ) . '
+ 								' . $mp_product_list_content . '
+ 								
+ 								<div class="mp_social_shares">
+									' . $pinit . '
+									' . $fb . '
+									' . $twitter . '
+								</div><!-- end mp_social_shares -->
+ 								
+							</div><!-- end mp_product_meta -->
 
-			$content .= $layout_type == 'grid' ?
-					ea_mp_products_html_grid($custom_query->posts) :
-					_mp_products_html_list($custom_query->posts);
-		} else {
-			$content .= '<div id="mp_no_products">' . apply_filters('mp_product_list_none', __('No Products', 'mp')) . '</div>';
-		}
+							<div class="mp_product_callout">
+								' . $product->buy_button( false, 'list', array(), true ) . '
+								' . apply_filters( 'mp_product_list_meta', '', $product->ID ) . '
+							</div><!-- end mp_product_callout -->
+							
+ 						</div><!-- end mp_product_details -->
+						
+					</div><!-- end mp_product -->
+				</div></li><!-- end mp_product_item -->';
 
-		$content .= '</ul>';
-		
-		if ($echo)
-			echo $content;
-		else
-			return $content;
-}
+		endwhile;
 
-function ea_mp_products_html_grid($post_array = array()) {
+			$html .= '</ul>';
+
+		wp_reset_postdata();
+
+		/**
+		 * Filter the product list html content
+		 *
+		 * @since 3.0
+		 *
+		 * @param string $html .
+		 * @param WP_Query $custom_query .
+		 */
+
+		return apply_filters( "_mp_products_html_{$view}", $html, $custom_query );
+	}
+
+/*function ea_mp_products_html_grid($post_array = array()) {
     global $mp;
     $html = '';
 
@@ -132,28 +127,8 @@ function ea_mp_products_html_grid($post_array = array()) {
 
     return $html;
 }
-// BUY BUTTON removed
-// <div class="ea_mp_buy"><span><a class="small button" href="'.get_permalink($post->ID) . '">Details and formats</a></span></div>
+*/
 
-
-//
-// Function to apply discounts to members
-// ref:http://premium.wpmudev.org/forums/topic/how-do-i-offer-separating-pricing-for-premium-members-using-marketpress
-
-function mp_membership_price_discount( $price ){
-	// check for existence of Membership plugin
-	if ( class_exists( 'M_Membership' ) ) {
-		// check if user is logged in
-		if ( is_user_logged_in() ){	
-		// take 10% discount for users on access level with id=5
-			if ( current_user_on_level(5) ) {
-				return $price * 0.9;
-			}
-		}
-	}
-	return $price;
-}
-add_filter( 'mp_product_price', 'mp_membership_price_discount' );
 
 // shortcode to add an 'add to cart' button to a page
 
@@ -171,8 +146,9 @@ function PrintVersionBox($params) {
 			<div class="column large-6 small-12">
 			<span class="preprice">'.$textlabel.':<br></span>'.do_shortcode("[mp_product_price product_id=\"$productid\" label=\"\"]").'
 			</div>
-			<div class="column large-6 small-12">
-			<form class="mp_buy_form" method="post" action="/store/shopping-cart/" style="display: block;"><input type="hidden" name="product_id" value="'.$productid.'"><input type="hidden" name="variation" value="0"><input type="hidden" name="action" value="mp-update-cart"><input class="mp_button_addcart" type="submit" name="addcart" value="Add To Cart »"></form>                                
+			<div class="column large-6 small-12">'.
+			do_shortcode("[mp_buy_button product_id=\"$productid\" context=\"single\"]")
+			.'                               
 			</div>
 		</div>
 	</div>
@@ -236,65 +212,59 @@ function BuyBoxSetNow() {
 }
 add_shortcode('buyboxset','BuyBoxSetNow');
 
-
+// COLLECT ECOMMERCE DATA FROM ORDER COMPLETE PAGE
 // adding ecommerce data to payment confirmed page, in a format to work with Google Tag Manager
 // from https://premium.wpmudev.org/forums/topic/marketpress-and-google-tag-manager#post-887957
-// add script only on final checkout page
 
-add_action('wp_head', 'display_google_tag_manager_code',10);
-function display_google_tag_manager_code()
-{
-    global $wp_query;
-    //check is the page the final confirmation step 
-    if (!$wp_query->query_vars['checkoutstep'] == 'confirmation') {
-        return;
-    }
-
-    //order still on session
-    if (!isset($_SESSION['mp_order']) || empty($_SESSION['mp_order'])) {
-        return;
-    }
-
-    global $mp;
-    $order_id = $_SESSION['mp_order'];
-    $order = $mp->get_order($order_id);
-    if (!is_object($order)) {
-        return ;
-    }
-
-    //javascript process code here
-
-	$js = '    
-	<!-- Google Tag Manager --> 
+add_action( 'wp_head', 'display_google_tag_manager_code' );
+function display_google_tag_manager_code() {
+	if ( get_query_var( 'mp_order_id', 0 ) == 0 ) {
+		return;
+	}
+	//check does the page is confirmation step (last step)
+	$order_id = get_query_var( 'mp_order_id', 0 );
+	$order = new MP_Order( $order_id );
+	if ( ! $order->exists() ) {
+		return;
+	}
+	$cart = $order->get_cart();
+	//javascript process code here
+	if ( is_array( $cart->get_items() ) && count( $cart->get_items() ) ) {
+		?>
+	<!-- Google Tag Manager  Ecommerce -->
 	<script>
 	dataLayer=[{
-			"transactionId": "'.esc_attr($order->post_title).'",	// Transaction ID. PETE. Required.
-			"transactionAffiliation": "'.esc_attr(get_bloginfo('blogname')).'",	// Affiliation or store name.
-			"transactionTotal": '.$order->mp_order_total.',	// Grand Total.
-			"transactionShipping": "'.$order->mp_shipping_total.'",	// Shipping.
-			"transactionTax": "'.$order->mp_tax_total.'",	// Tax.
-		';
-	//loop the items
-	if (is_array($order->mp_cart_info) && count($order->mp_cart_info)) {
-	$js .= '"transactionProducts": [';
-		foreach ($order->mp_cart_info as $product_id => $variations) {
-			foreach ($variations as $variation => $data) {
-				$sku = !empty($data['SKU']) ? esc_attr($data['SKU']) : $product_id;
-				$js .= '{
-								 "id": "'.esc_attr($order->post_title).'", // Transaction ID. Required.
-								 "name": "'.esc_attr($data['name']).'",	// Product name. Required.
-								 "sku": "'.$sku.'",	// SKU/code.
-								 "category": "",	// Category or variation.
-								 "price": '.$data['price'].',	// Unit price.
-								 "quantity": '.$data['quantity'].'	// Quantity.
-							},';
+		"transactionId": "<?php echo(esc_attr( $order->post_title )); ?>",	// Transaction ID Required.
+		"transactionAffiliation": "<?php echo(esc_attr( get_bloginfo( 'blogname' ) )); ?>",	// Affiliation or store name.
+		"transactionTotal": <?php echo($cart->total()); ?>,	// Grand Total.
+		"transactionShipping": "<?php echo($cart->shipping_total()); ?>",	// Shipping.
+		"transactionTax": <?php echo($cart->tax_total()); ?>,	// Tax.
+		"transactionProducts": [
+		<?php
+			//loop the items
+			$counter=0;
+		foreach ( $cart->get_items_as_objects() as $product ) {
+			$sku = $product->get_meta( 'sku', $product->ID );
+			?> {
+								 "id": "<?php echo(esc_attr( $order->post_title )) ; ?>", // Transaction ID. Required.
+								 "name": "<?php echo(esc_attr( $product->post_title )) ; ?>",	// Product name. Required.
+								 "sku": "<?php echo($sku) ?>",	// SKU/code.
+								 "price": <?php echo($product->get_price( 'lowest' )) ; ?>,	// Unit price.
+								 "quantity": <?php echo($product->qty) ; ?>	// Quantity.
+							}
+		<?php
+		$counter ++;
+		if ($counter != count( $cart->get_items() )) {
+			// add a comma
+			?>
+			,
+			<?php
 			}
 		}
-	$js=rtrim($js, ",")	;
-	$js .= ']}];';	
-	$js .='
+		?> ]}];
 	</script>
-	<!-- End Google Tag Manager -->';
-	echo ($js);
+	<!-- End Google Tag Manager Ecommerce -->
+	<?php
+	}
 }
-}
+

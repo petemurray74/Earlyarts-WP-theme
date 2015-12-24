@@ -32,7 +32,12 @@
 									<?php // reactor_page_header(); ?>
 									<?php echo category_description(); ?>
 									<div class="entry-content">
-										<?php ea_mp_list_products(); ?>
+										<?php 
+										$args['tag']='teaching-guides';
+										$args['paginate']=false;
+										$args['order_by']='rand';
+										mp_list_products($args);
+										?>
                                         <div class="panel">Planning which pack to buy? 
                                         <a href="http://dm16174grt2cj.cloudfront.net/learning-area-grid-starter-chart.pdf" target="_blank">See how each pack links to EYFS Areas of Learning and Development</a>
                                         </div>
