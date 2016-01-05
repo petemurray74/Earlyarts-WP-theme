@@ -20,3 +20,8 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+/.gitattributes export-ignore
+/.gitignore     export-ignore
+/node_modules     export-ignore
+/.sass-cache     export-ignore
