@@ -1,7 +1,7 @@
 <?php
 
 // overwriting the same function from template-functions.php
-// hacked to work for grid display only
+// hacked to work for grid display only.
 	function z_mp_products_html( $view, $custom_query, $related_products = false ) {
 
 		$html = '<ul class="small-block-grid-2 large-block-grid-3">';
