@@ -218,3 +218,4 @@ pip-log.txt
 *.scssc
 compass_app_log.txt
 *.cfg
+node_modules/
