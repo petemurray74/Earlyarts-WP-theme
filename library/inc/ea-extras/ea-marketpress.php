@@ -136,8 +136,8 @@ function display_google_tag_manager_code() {
 	<?php
 	}
 }
-//MAKE MARKETPRESS and other? emails HTML
-function earlyarts_set_content_type(){
-    return "text/html";
+//MAKE MARKETPRESS (and other?) email confirmations HTML format
+add_filter( 'wp_mail_content_type', 'set_content_type', 999, 1 );
+function set_content_type( $content_type ) {
+	return 'text/html';
 }
-add_filter( 'wp_mail_content_type','earlyarts_set_content_type' );
