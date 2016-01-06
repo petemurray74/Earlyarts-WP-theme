@@ -28,7 +28,7 @@ add_shortcode('printversion','PrintVersionBox');
 
 
 // shortcode to add pack contents table
-//  [packcontents] 
+//  [packcontents] .
 function PackContentsTable() {
 	return
 '
