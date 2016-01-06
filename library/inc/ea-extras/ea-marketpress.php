@@ -87,8 +87,8 @@ add_shortcode('buyboxset','BuyBoxSetNow');
 
 add_action( 'wp_head', 'display_google_tag_manager_code' );
 function display_google_tag_manager_code() {
-	if ( get_query_var( 'mp_order_id', 0 ) == 0 ) {
-		return;
+	if ( get_query_var( 'mp_order_id', 0 ) == '0' ) {
+	return;
 	}
 	//check does the page is confirmation step (last step)
 	$order_id = get_query_var( 'mp_order_id', 0 );
@@ -107,7 +107,6 @@ function display_google_tag_manager_code() {
 		"transactionAffiliation": "<?php echo(esc_attr( get_bloginfo( 'blogname' ) )); ?>",	// Affiliation or store name.
 		"transactionTotal": <?php echo($cart->total()); ?>,	// Grand Total.
 		"transactionShipping": "<?php echo($cart->shipping_total()); ?>",	// Shipping.
-		"transactionTax": <?php echo($cart->tax_total()); ?>,	// Tax.
 		"transactionProducts": [
 		<?php
 			//loop the items
