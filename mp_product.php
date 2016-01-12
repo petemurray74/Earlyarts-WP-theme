@@ -49,7 +49,7 @@
                             font-size:130%;    
 							}		
 							</style>
-							<div class="entry-content">
+							<div class="entry-content">						
                                 <div class="row">
                                     <div class="column large-5 push-7 small-12">
                                         <?php 
@@ -57,7 +57,7 @@
                                        
                                         ?>
                                     </div> 
-                                    <div class="column large-7 pull-5 small-12">
+                                    <div id="mp-single-product" class="column large-7 pull-5 small-12">
                                     <p class="product-excerpt">
                                     <?php
                                     //show the excerpt
