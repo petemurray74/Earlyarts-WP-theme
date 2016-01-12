@@ -57,7 +57,8 @@
                                        
                                         ?>
                                     </div> 
-                                    <div id="mp-single-product" class="column large-7 pull-5 small-12">
+									<section id="mp-single-product" itemscope itemtype="http://schema.org/Product">
+										<div class="mp_product mp_single_product column large-7 pull-5 small-12">
                                     <p class="product-excerpt">
                                     <?php
                                     //show the excerpt
@@ -79,7 +80,8 @@
 								?>
 								<?php mp_product_description($thisProdId) ?>
                                      
-                                    </div>     
+                                    </div>  
+								</section>				
   
                                     
                                 </div>
